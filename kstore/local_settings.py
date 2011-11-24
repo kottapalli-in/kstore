@@ -69,3 +69,15 @@ logging.basicConfig(level=logging.DEBUG,
 logging.getLogger('keyedcache').setLevel(logging.INFO)
 logging.getLogger('l10n').setLevel(logging.INFO)
 logging.info("Satchmo Started")
+
+
+L10N_SETTINGS = {
+  'currency_formats' : {
+     'INR' : {'symbol': u'Rs.', 'positive' : u"Rs. %(val)0.2f", 'negative': u"Rs. (%(val)0.2f)",
+               'decimal' : '.'},
+  },
+  'default_currency' : 'INR',
+  'show_admin_translations': False,
+  'allow_translation_choice': False,
+}
+
