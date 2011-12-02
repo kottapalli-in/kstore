@@ -48,8 +48,8 @@ SECRET_KEY = 'EXAMPLE SECRET KEY'
 #EMAIL_USE_TLS = True
 
 #These are used when loading the test data
-SITE_DOMAIN = "localhost"
-SITE_NAME = "Simple Satchmo"
+SITE_DOMAIN = "shop.kottapalli.in"
+SITE_NAME = "Kottapalli Book Store"
 
 # not suitable for deployment, for testing only, for deployment strongly consider memcached.
 CACHE_BACKEND = "locmem:///"
