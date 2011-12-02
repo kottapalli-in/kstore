@@ -1,8 +1,8 @@
 
 .PHONY: venv
 
-ENV="./env/bin/python"
-MANAGE="$(ENV) kstore/manage.py"
+ENV=./env/bin/python
+MANAGE=$(ENV) kstore/manage.py
 
 run:
 	./env/bin/python kstore/manage.py runserver
