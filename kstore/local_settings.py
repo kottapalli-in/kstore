@@ -81,3 +81,6 @@ L10N_SETTINGS = {
   'allow_translation_choice': False,
 }
 
+# required to run Django app to run at /
+FORCE_SCRIPT_NAME = ""
+
