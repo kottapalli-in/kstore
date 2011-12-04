@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-04 04:18-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: local_settings.py:22
+msgid "Telugu"
+msgstr ""
+
+#: local_settings.py:23
+msgid "English"
+msgstr ""
+
+#: templates/base.html:35
+msgid "Shop Categories"
+msgstr ""
+
+#: templates/base.html:60
+msgid "Quick Links"
+msgstr ""
+
+#: templates/base.html:62
+msgid "Recently Added"
+msgstr "ఇటీవల చేర్చినవి"
+
+#: templates/base.html:64
+msgid "Best Sellers"
+msgstr "ఉత్తమ అమ్మకందారులు"
+
+#: templates/base.html:66
+msgid "Category Index"
+msgstr "వర్గం సూచిక"
+
+#: templates/base.html:68
+msgid "Quick Order"
+msgstr "త్వరిత ఆర్డర్"
+
+#: templates/base.html:71
+msgid "Account Information"
+msgstr "ఖాతా సమాచారం"
+
+#: templates/base.html:73
+msgid "Admin"
+msgstr "అడ్మిన్"
+
+#: templates/base.html:77
+msgid "Account Details"
+msgstr "ఖాతా వివరాలు"
+
+#: templates/base.html:78
+msgid "Log out"
+msgstr ""
+
+#: templates/base.html:80
+msgid "Log in"
+msgstr ""
+
+#: templates/base.html:84
+msgid "Cart"
+msgstr ""
+
+#: templates/base.html:89
+msgid "Check out"
+msgstr ""
+
+#: templates/base.html:95
+msgid "Contact Us"
+msgstr "సంప్రదించండి"
+
+#: templates/base.html:111
+msgid "Powered by <a href=\"http://www.satchmoproject.com\">Satchmo</a>."
+msgstr ""
+
+#: templates/product/product.html:23 templates/shop/search.html:7
+msgid "Home"
+msgstr ""
+
+#: templates/product/product.html:39
+msgid "Price"
+msgstr "వెల"
+
+#: templates/product/product.html:39
+msgid "(incl. tax)"
+msgstr ""
+
+#: templates/product/product.html:55
+msgid "Quantity"
+msgstr "పరిమాణం"
+
+#: templates/product/product.html:57
+msgid "Add to cart"
+msgstr ""
+
+#: templates/shop/search.html:13 templates/shop/search.html.py:52
+msgid "Nothing found"
+msgstr "ఏమీ కనిపించలేదు"
+
+#: templates/shop/search.html:16
+#, python-format
+msgid "Search results for %(category_name)s products"
+msgstr ""
+
+#: templates/shop/search.html:20
+msgid "Categories"
+msgstr ""
+
+#: templates/shop/search.html:30
+msgid "Products"
+msgstr ""
+
+#: templates/shop/search.html:45
+msgid "for"
+msgstr ""

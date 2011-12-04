@@ -56,7 +56,20 @@
 	</div>
 
 	<div id="sidebar-primary">{# rightnav #}
-		{% block sidebar-primary %}
+        {% block sidebar-primary %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_current_language as LANGUAGE_CODE %}
+        <form action="/i18n/setlang/" method="post">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{ request.path }}" />
+            <select name="language">
+                {% for lang in LANGUAGES %}
+                    <option {% if LANGUAGE_CODE == lang.0 %}selected='selected'{% endif %} value="{{ lang.0 }}">{{ lang.1 }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Go" />
+        </form>
+			
 		<h3>{% trans "Quick Links" %}</h3>
 		{% url satchmo_product_recently_added as recenturl %}
 		{% if recenturl %}<a href="{{ recenturl }}">{% trans "Recently Added" %}</a>{% endif %}
