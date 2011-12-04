@@ -17,8 +17,9 @@ SATCHMO_DIRNAME = DIRNAME
     
 gettext_noop = lambda s:s
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'te'
 LANGUAGES = (
+   ('te', gettext_noop('Telugu')),
    ('en', gettext_noop('English')),
 )
 
