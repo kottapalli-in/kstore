@@ -29,18 +29,32 @@ ProductVariations or CustomProducts, look for product/detail_xxx.html
 
 {% block content %}
 {% block productdetail %}
-<h4>{{ product.translated_name }}</h4>
-<span id="product_images">
-    {% thumbnail product.main_image.picture 100x100 as image %}
-    <img src="{{ image }}" width="{{ image.width }}" height="{{ image.height }}" />
-</span>
+<div class="product">
 
-<p>{{ product.translated_description }}</p>
-{% trans "Price" %} {% if default_view_tax %} {% trans '(incl. tax)' %}{% endif %}:
-<h3>
-	{% if sale %}<strike id="fullprice" style="display: block;">{{ product|discount_price:""|currency }}</strike>{% endif %}
-	<span id="price">{{ product|discount_price:sale|currency }}</span>
-</h3>
+    <div class="cover" style="float: left;">
+    {% if product.productimage_set.all %}
+        {% for pic in product.productimage_set.all %}
+            {% thumbnail pic.picture 150x150 as image %}
+            <img src="{{ image }}" width="{{ image.width }}" height="{{ image.height }}" />
+        {% endfor %}
+    {% else %}
+        <div class='nocover' style="background: #eee; padding: 5px; width: 100px; height: 150px; border: 1px solid #ddd; text-align: center;">
+            <div class="inner-cover" style="border: 1px solid white; height: 129px; padding: 10px;">
+                <span class="product-title">{{ product.translated_name }}</span>
+            </div>
+        </div>
+    {% endif %}
+    </div>
+    
+    <div class="bookinfo" style="padding-left: 160px">
+    <h4>{{ product.translated_name }}</h4>
+    <p>{{ product.translated_description }}</p>
+    {% trans "Price" %} {% if default_view_tax %} {% trans '(incl. tax)' %}{% endif %}:
+    <h3>
+    	{% if sale %}<strike id="fullprice" style="display: block;">{{ product|discount_price:""|currency }}</strike>{% endif %}
+    	<span id="price">{{ product|discount_price:sale|currency }}</span>
+    </h3>
+
 
 {% with product.translated_attributes as atts %}{% if atts %}
 <p class="productattributes">
@@ -58,10 +72,12 @@ ProductVariations or CustomProducts, look for product/detail_xxx.html
 {% plugin_point "product_add_buttons" %}
 {% plugin_point "product_form" %}
 </form>
+</div>
 {% endblock %}
 
 {% block productfooter %}
 {% if sale %}{% include "product/product_discount_eligible.html" %}{% endif %}
 {% plugin_point "product_footer" %}
 {% endblock %}
+</div>
 {% endblock %}
