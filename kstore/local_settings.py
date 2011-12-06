@@ -85,3 +85,8 @@ L10N_SETTINGS = {
 # required to run Django app to run at /
 FORCE_SCRIPT_NAME = ""
 
+# Hook to get production settings
+try:
+    from production_settings import *
+except ImportError:
+    pass
