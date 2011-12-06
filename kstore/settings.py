@@ -149,6 +149,7 @@ AUTHENTICATION_BACKENDS = (
 SATCHMO_SETTINGS = {
     'SHOP_BASE' : '',
     'MULTISHOP' : False,
+    'PRODUCT_SLUG': 'books',
     #'SHOP_URLS' : patterns('satchmo_store.shop.views',)
 }
 
