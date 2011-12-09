@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import *
 
 
-urlpatterns = patterns('',
-    (r'dashboard/$', 'kstore.dashboard.views.index', {}),
-    (r'dashboard/addbooks/$', 'kstore.dashboard.views.addbooks', {}),
+urlpatterns = patterns('kstore.dashboard.views',
+    url(r'dashboard/$', 'index', {}, name='dashboard_index'),
+    url(r'dashboard/addbooks/$', 'addbooks', {}, name='dashboard_addbooks'),
 )
