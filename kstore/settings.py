@@ -132,7 +132,7 @@ INSTALLED_APPS = (
     #'typogrify',            # dependency on  http://code.google.com/p/typogrify/
     #'debug_toolbar',
     'app_plugins',
-    'kstore.localsite',
+    'kstore.dashboard',
 )
 
 AUTHENTICATION_BACKENDS = (

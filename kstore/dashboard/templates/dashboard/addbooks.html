@@ -1,0 +1,36 @@
+{% extends "dashboard/base.html" %}
+
+{% block content %}
+
+<h2>Add Books</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    
+    <table class="addbooks">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>Published Date</th>
+            <th>ISBN</th>
+            <th>Price</th>
+            <th>Cover Image</th>
+        </tr>
+        {% for i in 0123456789|make_list %}
+            <tr>
+                <td><input type="text" name="title"></td>
+                <td><input type="text" name="author"></td>
+                <td><input type="text" name="publisher"></td>
+                <td><input type="text" name="published_date"></td>
+                <td><input type="text" name="isbn"></td>
+                <td><input type="text" name="price"></td>
+                <td><input type="file" name="cover"></td>
+            </tr>
+        {% endfor %}
+    </table>
+    
+    <input type="submit" name="submit" value="Save"/>
+</form>
+
+{% endblock %}

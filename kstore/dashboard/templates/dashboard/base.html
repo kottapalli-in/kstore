@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Dashboard</title>
+    <style type="text/css">
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        #container {
+        }
+        #header {
+            padding: 5px 20px;
+            background: #521D00;
+            color: #FFD6BF;
+        }
+        #header h1 {
+            color: white;
+        }
+        #header a, #header a:visited {
+            color: inherit;
+        }
+        #content {
+            padding: 5px 20px;
+        }
+    </style>
+  </head>
+  <body>
+      <div id="container">
+          <div id="header">
+              <h1><a href="/dashboard/">Dashboard</a></h1>
+              <a href="/">&larr; Back to store</a> | <a href="/dashboard/addbooks/">Add Books</a>
+          </div>
+          <div id="content">
+          {% block content %}
+            Content Comes here
+          {% endblock %}
+          </div>
+      </div>         
+  </body>
+</html>
