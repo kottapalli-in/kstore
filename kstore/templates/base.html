@@ -7,7 +7,9 @@
 {% endblock %}
 <head>
     {% block extra-head %}{% endblock %}
+    
     {% block stylesheet %}<link rel="stylesheet" href="{{ media_url }}css/style.css" />{% endblock %}
+
     <title>{% block title %}{{ shop_name }}{% if pagetitle %}: {{ pagetitle }}{% endif %}{% endblock %}</title>
     {% plugin_point "page_head" %}
 </head>
@@ -26,93 +28,11 @@
     </div>
 
     <div id="sidebar-secondary">
-		{% block sidebar-secondary %}
-		<div>
-			{% satchmo_search_form %}
-		</div>
-		<div>
-			{% block sidebar %}
-			<h3>{% trans "Shop Categories" %}</h3>
-			{% block sidebar-categories %}
-			<div id="menu_container">
-                {% if category.id %}
-                    {% category_tree category.id %}
-                {% else %}
-                    {% if product.get_category %}
-                        {% category_tree product.get_category.id %}
-                    {% else %}
-                        {% category_tree %}
-                    {% endif %}
-                {% endif %}
-			</div>
-			{% endblock sidebar-categories %}
-			
-			{% block sidebar-secondary-bottom %}
-			{% plugin_point "sidebar_secondary_bottom" %}
-			{% endblock %}
-			{% endblock sidebar %}
-		</div>
-		{% endblock sidebar-secondary %}
+        {% include "sidebar_left.html" %}
 	</div>
 
-	<div id="sidebar-primary">{# rightnav #}
-        {% block sidebar-primary %}
-        {% get_available_languages as LANGUAGES %}
-        {% get_current_language as LANGUAGE_CODE %}
-        <form action="/i18n/setlang/" method="post">
-            {% csrf_token %}
-            <input name="next" type="hidden" value="{{ request.path }}" />
-            <select name="language">
-                {% for lang in LANGUAGES %}
-                    <option {% if LANGUAGE_CODE == lang.0 %}selected='selected'{% endif %} value="{{ lang.0 }}">{{ lang.1 }}</option>
-                {% endfor %}
-            </select>
-            <input type="submit" value="Go" />
-        </form>
-			
-		<h3>{% trans "Quick Links" %}</h3>
-		{% url satchmo_product_recently_added as recenturl %}
-		{% if recenturl %}<a href="{{ recenturl }}">{% trans "Recently Added" %}</a>{% endif %}
-		{% url satchmo_product_best_selling as popularurl %}
-		{% if popularurl %}<br/><a href="{{ popularurl }}">{% trans "Best Sellers" %}</a><br/>{% endif %}
-        {% url satchmo_category_index as category_index %}
-        {% if category_index %} <a href="{{ category_index }}">{% trans "Category Index" %}</a><br /> {% endif %}
-        {% url satchmo_quick_order as quick_order %}
-        {% if quick_order %}<a href="{{ quick_order }}">{% trans "Quick Order" %}</a> {% endif %}
-		{% plugin_point "sidebar_links" %}
-
-	    <h3>{% trans "Account Information" %}</h3>
-	    {% if user.is_staff %}
-		<a href="{% url admin:index %}" target="blank">{% trans "Admin" %}</a><br/>
-		{% endif %}
-	    {% if user.is_authenticated %}
-		{% url satchmo_account_info as accounturl %}
-        {% if accounturl %}<a href="{{ accounturl }}" target="blank">{% trans "Account Details" %}</a><br/>{% endif %}
-        <a href="{{ logout_url }}?next={{request.path}}">{% trans "Log out" %}</a><br/>
-	    {% else %}
-        <a href="{{ login_url }}?next={{request.path}}">{% trans "Log in" %}</a><br/>
-	    {% endif %}
-
-		{% url satchmo_cart as carturl %}
-	    {% if carturl %}<a href="{{ carturl }}">{% trans "Cart" %}</a>{% endif %}
-
-	    {% if not cart.is_empty %}
-            ({{ cart_count|normalize_decimal }} - {% if sale %}{{ cart|discount_cart_total:sale|currency }}{% else %}{{cart.total|currency}}{% endif%}) <br/>
-            {% url satchmo_checkout-step1 as checkouturl %}
-            {% if checkouturl %}<a href="{{ checkouturl }}">{% trans "Check out" %}</a>{% endif %}
-	    {% endif %}
-	
-		{% plugin_point "shop_sidebar_actions" %}
-    
-		{% url satchmo_contact as contact_url %}
-	    {% if contact_url %}<p><a href="{{ contact_url }}">{% trans "Contact Us" %}</a></p>{% endif %}
-
-		{% satchmo_language_selection_form %}
-
-		{% block sidebar-primary-bottom %}
-		{% plugin_point "shop_sidebar_primary" %}
-		{% endblock %}
-		{% endblock sidebar-primary %}
+	<div id="sidebar-primary">
+        {% include "sidebar_right.html" %}
 	</div>
 
 	<div id="content">
