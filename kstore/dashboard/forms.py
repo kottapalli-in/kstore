@@ -31,16 +31,13 @@ class ProductForm(forms.Form):
         price.save()
 
         if data.get('category'):
-            # get or create category
-            category, created = Category.objects.get_or_create(site=site, name=data['category'])
-            # TODO: remove existing categories of the product
-            product.category.add(category)
+            product.category.add(data['category'])
 
         if data.get('cover_image'):
             # create product image
             ProductImage.objects.create(product=product, picture=data['cover_image'])
 
-        # check for product attributes 
+        # check for product attributes
         for key in data:
             # if key is not product attribute or
             # value for the key is blank, goto next key
