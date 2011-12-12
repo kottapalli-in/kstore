@@ -8,7 +8,9 @@
 <head>
     {% block extra-head %}{% endblock %}
     
-    {% block stylesheet %}<link rel="stylesheet" href="{{ media_url }}css/{{ theme }}.css" />{% endblock %}
+    {% block stylesheet %}<link rel="stylesheet/less" type="text/css" href="{{ media_url }}css/{{ theme }}" />{% endblock %}
+    <script type="text/javascript" src="{{ media_url }}js/less-1.1.5.min.js"></script>
+    
 
     <title>{% block title %}{{ shop_name }}{% if pagetitle %}: {{ pagetitle }}{% endif %}{% endblock %}</title>
     {% plugin_point "page_head" %}
@@ -18,14 +20,54 @@
     {% plugin_point "page_top" %}
     <div id="container">
 	    <div id="top">
+	        
+
+	        <div class="search" style="float: right;">
+    	        <div style="text-align: right;">
+    	            <a href="#">Home</a> 
+                    | <a href="#">Kottapalli Patrika</a> 
+    	            | <a href="#">Blog</a> 
+    	            | <a href="#">Contact Us</a> 
+    	            | <a href="#">Login</a> 
+    	            | <a href="#">Signup</a>
+    	        </div>
+	            <form action="/search/" style="padding-top: 20px;">
+    	            <input type="text" name="keywords" style="width: 200px;"/>
+    	            <input type="submit" value="Search"/>
+    	            <span style="font-size: 1.3em;">| Cart (2)</span>
+	            </form>
+	        </div>
+
+
 	        <h1>{{ shop_name }}</h1>
 	    </div>
+	    
+	    <div id="searchbar" style="padding: 5px; margin: 0 auto; text-align: center; background: #ccc; display: none;">
+	        
+	        <div style="float: right;">
+	        <a href="#">Login</a> | <a href="#">Cart</a>
+	        </div>
 
+	        <div style="float: left;">
+	        <a href="#">Kottapalli Patrika</a> | <a href="#">Contact Us</a>
+	        </div>
+
+	        
+	        <div class="search" style="display: inline;">
+	            <form action="/search/">
+    	            <input type="text" name="keywords" style="width: 400px;"/>
+    	            <input type="submit" value="Search">
+	            </form>
+	        </div>
+	    </div>
+
+        <!--
 	    <div id="navbar">
 	    <ul>
 	    	{% block navbar %}Breadcrumbs here{% endblock %}
 	   	</ul>
-    </div>
+        </div>
+        -->
 
     <div id="sidebar-secondary">
         {% include "sidebar_left.html" %}
