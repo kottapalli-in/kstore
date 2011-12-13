@@ -4,8 +4,9 @@
 
 <h2>Add Books</h2>
 
-<form method="POST">
+<form method="POST" enctype='multipart/form-data'>
     {% csrf_token %}
+    {{ formset.management_form }}
     
     <table class="addbooks">
         <tr>
@@ -15,17 +16,19 @@
             <th>Published Date</th>
             <th>ISBN</th>
             <th>Price</th>
+            <th>Category</th>
             <th>Cover Image</th>
         </tr>
-        {% for i in 0123456789|make_list %}
+        {% for form in formset.forms %}
             <tr>
-                <td><input type="text" name="title"></td>
-                <td><input type="text" name="author"></td>
-                <td><input type="text" name="publisher"></td>
-                <td><input type="text" name="published_date"></td>
-                <td><input type="text" name="isbn"></td>
-                <td><input type="text" name="price"></td>
-                <td><input type="file" name="cover"></td>
+                <td>{{ form.title }}</td>
+                <td>{{ form.author }}</td>
+                <td>{{ form.publisher }}</td>
+                <td>{{ form.published_date }}</td>
+                <td>{{ form.isbn }}</td>
+                <td>{{ form.price }}</td>
+                <td>{{ form.category }}</td>
+                <td>{{ form.cover_image }}</td>
             </tr>
         {% endfor %}
     </table>
