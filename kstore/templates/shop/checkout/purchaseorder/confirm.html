@@ -13,8 +13,10 @@
 
 {% with order.total|currency as order_total %}
 {% blocktrans %}
-<b>BANK ACCOUNT DETAILS HERE</b><br/>
-This order will be charged on your account for {{ order_total }}.
+<b>Bank Account Details</b><br/>
+<pre>{{ bank_account_details }}</pre>
+
+Deposit the order amount of {{ order_total }}, in the above mentioned bank account.
 {% endblocktrans %}
 {% endwith %}
 {% endblock %}

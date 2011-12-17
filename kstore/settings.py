@@ -73,6 +73,7 @@ MIDDLEWARE_CLASSES = (
 TEMPLATE_CONTEXT_PROCESSORS = ('satchmo_store.shop.context_processors.settings',
                                'django.contrib.auth.context_processors.auth',
                                'kstore.context_processors.theme',
+                               'kstore.context_processors.bank_account_details',
                                #'satchmo_ext.recentlist.context_processors.recent_products',
                                )
 

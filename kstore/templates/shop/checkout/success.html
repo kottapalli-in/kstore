@@ -1,5 +1,6 @@
 {% extends "shop/base.html" %}
 {% load i18n %}
+{% load satchmo_currency %}
 {% load satchmo_order %}
 {% load satchmo_google %}
 
@@ -14,7 +15,11 @@
 <p>{% trans 'Please print out this page as a receipt.  You will also receive an email with this information.' %}</p>
     
 {% order_tracking_details order %}
-<br/><b>BANK ACCOUNT DETAILS HERE</b>
+<br/><b>Bank Account Details</b>
+<pre>{{ bank_account_details }}</pre>
+{% with order.total|currency as order_total %}
+    Deposit the order amount of {{ order_total }}, in the above mentioned bank account.
+{% endwith %}
 </div>
 {% endblock %}
 
