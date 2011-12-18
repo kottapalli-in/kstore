@@ -1,0 +1,31 @@
+{% load i18n %}
+{% load thumbnail %}
+{% load satchmo_currency satchmo_discounts %}
+
+<div class="search-item">
+	<div class="thumbnail">
+        {% thumbnail product.main_image.picture 75x100 as image %}
+        <a href="{{ product.get_absolute_url }}"><img src="{{ image }}" width="{{ image.width }}" height="{{ image.height }}" /></a>
+	</div>
+	<div class="details">
+		<a href="{{ product.get_absolute_url }}">{{ product.translated_name }} </a> by <span class="fixthis">Author name</a>
+		<div>
+			<div class="price">
+				<div class="price-value">{% trans "Price:" %} {{ product|discount_price:sale|currency}}</div>
+				<form action="{% url satchmo_smart_add %}" method="post">{% csrf_token %}
+					<input type="hidden" name="quantity" id="quantity" value="1" class="priced" />
+					<input type="hidden" name="productname" id="productname" value="{{product.slug}}" />
+					<button type="submit" name="addcart">{% trans "Buy Now" %}</button>
+				</form>
+			</div>
+			<div class="metadata">
+				Publisher: National Book Trust<br/>
+				Pages: 42<br/>
+				Released: 2010<br/>
+				<br/>
+				<div class="desc">Bulbuli had heard so much about the mysterious place in the jungle that everybody talked about but nobody had visited.</div>
+			</div>
+		</div>
+		<br style="clear: left;"/>
+	</div>
+</div>

@@ -163,6 +163,10 @@ h4 {
 	*/
 	min-height: 400px;
 }
+
+#main-content {
+	margin-right: 200px;
+}
         
 ul#top-menu {
     list-style: none outside none;
@@ -200,7 +204,7 @@ ul#top-menu li {
     float: right;
     width: 150px;
 	background: @bgcolor_sidebar;
-	padding: 20px;
+	padding: 20px 20px 10px 20px;
 	border-radius: 10px;
 }
 
@@ -316,4 +320,51 @@ a, a:visited {
 .bookinfo {
 	margin-left: 200px;
 	padding: 0px 20px;
+}
+
+.search-results {
+	margin-top: 20px;
+}
+
+.search-item {
+	border-bottom: 1px solid @c4;
+	min-height: 100px;
+	padding: 10px 0px;
+}
+
+.search-item .thumbnail {
+	float: left;
+}
+
+.search-item .details {
+	margin-left: 75px;
+	padding-left: 20px;
+}
+
+.search-item .price {
+	float: left;
+	background: @c6;
+	padding: 10px;
+	width: 150px;
+	border-radius: 5px;
+	margin-top: 5px;
+}
+
+.search-item .metadata {
+	float: left;
+	padding: 10px;
+	width: 450px;
+}
+
+.search-item button {
+	padding: 5px;
+	background: @bgcolor_cart;
+	color: @color_cart;
+	border-radius: 5px;
+	border: 1px solid @c9;
+	cursor: pointer;
+	font-weight: bold;
+}
+.search-item .price-value {
+	margin-bottom: 5px;
 }

@@ -27,26 +27,14 @@
 	{% endif %}
 	{% if results.products %}
 		{% if not category %}
-		<h4>{% trans "Products" %}</h4>
+		<h2>{% trans "Search Results" %}</h2>
 		{% endif %}
-		<table>
+		
+		<div class="search-results">
 		{% for product in results.products %}
-	        <tr>
-                <td>
-                    {% if product.main_image %}
-                        <center>
-                            {% thumbnail product.main_image.picture 85x85 as image %}
-                            <a href="{{ product.get_absolute_url }}"><img src="{{ image }}" width="{{ image.width }}" height="{{ image.height }}" /></a>
-                        </center>
-                    {% endif %}
-                </td>
-                <td>
-                    <a href="{{ product.get_absolute_url }}">{{ product.translated_name }}</a> 
-                    {% trans "for" %} {{ product|discount_price:sale|currency}}
-                </td>
-            </tr>
-	    {% endfor %}
-		</table>
+			{% include "product/preview.html" %}
+		{% endfor %}
+		</div>
 	{% else %}
 		{% if category %}
 			<p>{% trans "Nothing found" %}</p>

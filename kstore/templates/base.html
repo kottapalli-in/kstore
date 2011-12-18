@@ -82,7 +82,7 @@
 			</div>
             <div id="search" style="padding: 10px 20px; float: right;">
                 <form action='/search/'>
-                <input type="text" name="keywords" style="width: 300px;"/>
+                <input type="text" name="keywords" value="{{search_string}}" style="width: 300px;"/>
                 <input type="submit" value="Go"/>
                 </form>
             </div>
@@ -97,8 +97,9 @@
 					<div id="sidebar-secondary">
 						{% include "sidebar_left.html" %}
 					</div>
-				
-				    {% block content %}{% endblock %}
+					<div id="main-content">
+						{% block content %}{% endblock %}
+					</div>
                 </div>
             </div>
         </div>
