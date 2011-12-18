@@ -1,3 +1,30 @@
+@c1: #E6EACF;
+@c2: #535640;
+@c3: #BDC68F;
+@c4: #7B7042;
+@c5: #FD8D05;
+@c6: #D9D1BC;
+@c7: #657C34;
+@c8: #DD7D00;
+@c9: #CD6D00;
+@c0: #D8D0AC;
+
+@bgcolor_body: @c1;
+@bgcolor_header: @c1;
+@color_header: @c2;
+
+@bgcolor_nav: @c4;
+@color_nav: @c1;
+
+@bgcolor_cart: @c5;
+@color_cart: black;
+
+@bgcolor_footer: @c3;
+@color_footer: black;
+
+@border_footer: @c4;
+
+@bgcolor_sidebar: @c3;
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, /* img, */ ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
     background: none repeat scroll 0 0 transparent;
@@ -8,9 +35,30 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     padding: 0;
     vertical-align: baseline;
 }    
+
+#colors span {
+	padding: 5px 10px;
+	color: white;
+	margin: 0px;
+}
+
+span#color1 { background: @c1;}
+span#color2 { background: @c2;}
+span#color3 { background: @c3;}
+span#color4 { background: @c4;}
+span#color5 { background: @c5;}
+span#color6 { background: @c6;}
+span#color7 { background: @c7;}
+span#color8 { background: @c8;}
+span#color9 { background: @c9;}
+span#color0 { background: @c0;}
     
 body {
-    background: url("http://shop.kottapalli.in/static/tmp/body-bg.png") repeat scroll 0 0 #F4F4F4;
+    /*
+	background: url("http://shop.kottapalli.in/static/tmp/body-bg.png") repeat scroll 0 0 #F4F4F4;
+	*/
+	background: @bgcolor_body;
+	
     padding: 0px;
     margin: 0px;
 }
@@ -20,18 +68,53 @@ body {
 }
         
 #header {
-    background: white;
+    background: @bgcolor_header;
     padding: 10px 0px;
+	color: @color_header;
+}
+#header h1 a {
+	text-decoration: none;
+	color: inherit;
+}
+
+#nav {
+	border-radius: 10px;
+	padding: 5px;
 }
         
+.nav {
+    font-size: 1.2em;
+    padding: 5px 0px;
+    background: @bgcolor_nav;
+	color: @color_nav;
+}
+
+.nav a, .nav a:visited {
+	color: inherit;
+}
+        
+.nav li {
+    float: left;
+    position: relative;
+}
+        
+
+        
 #featured {
-    backgroun: #ddd;
     padding: 10px 0px 20px 0px;
 }
         
 #footer {
     padding: 10px 0px;
-    background: #dde;
+    background: @bgcolor_footer;
+	color: @color_footer;
+	border-top: 1px solid @border_footer;
+	font-size: 0.9em;
+}
+
+#footer .container {
+	margin: 0 auto;
+	width: 960px;
 }
         
 #footer ul {
@@ -48,9 +131,12 @@ body {
     visibility: hidden;
 }
 .container {
-    margin: 0 auto;
     position: relative;
     text-align: left;
+}
+
+#wrapper {
+    margin: 0 auto;
     width: 960px;
 }
         
@@ -71,8 +157,10 @@ h4 {
 }
         
 #content {
-    padding: 20px;
+    padding: 20px 0px 20px 20px;
+	/*
     background: url("http://shop.kottapalli.in/static/tmp/content-bg.png") repeat scroll 0 0 transparent;
+	*/
 	min-height: 400px;
 }
         
@@ -82,22 +170,6 @@ ul#top-menu {
         
 ul#top-menu li {
     padding: 8px 11px 0;
-}
-        
-#nav {
-    border-top: 1px dashed #666666;
-    border-bottom: 1px dashed #666666;
-}
-        
-.nav {
-    font-size: 1.2em;
-    padding: 5px 0px;
-    background: #ffd;
-}
-        
-.nav li {
-    float: left;
-    position: relative;
 }
         
 #copyright {
@@ -126,13 +198,17 @@ ul#top-menu li {
 
 #right-sidebar {
     float: right;
-    width: 200px;
-            
+    width: 150px;
+	background: @bgcolor_sidebar;
+	padding: 20px;
+	border-radius: 10px;
 }
 
 #right-sidebar ul {
 	list-style: none;
 }
+
+/*
 
 #menu_container a {
 display: block;
@@ -175,6 +251,22 @@ font-weight: normal;
 #menu_container a.current:before {
 content: "\0020 \0020 \0020 \00BB \0020";
 }
+*/
+
+#menu_container a.current {
+	font-weight: bold;
+	color: @c9;
+	font-size: 1.1em;
+
+}
+
+#menu_container li {
+	margin: 10px 0px;
+}
+
+#menu_container a {
+	text-decoration: none;
+}
 
 .fixthis {
 	background: #fdd;
@@ -194,7 +286,8 @@ content: "\0020 \0020 \0020 \00BB \0020";
 
 #cart-outer {
 	float: right; 
-	background: #eef; 
+	background: @bgcolor_cart; 
+	color: @color_cart;
 	padding: 0px 10px; 
 	border-radius: 5px;
 }
@@ -206,4 +299,21 @@ content: "\0020 \0020 \0020 \00BB \0020";
 
 .button {
 	cursor: pointer;
+}
+
+h2 {
+	color: @c9;
+}
+
+a, a:visited {
+	color: @c9;
+}
+
+.hidden {
+	display: none;
+}
+
+.bookinfo {
+	margin-left: 200px;
+	padding: 0px 20px;
 }

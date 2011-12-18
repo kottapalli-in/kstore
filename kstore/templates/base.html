@@ -21,10 +21,12 @@
 	<!--
     {% plugin_point "page_top" %}
 	-->
+	<div id="wrapper">
 
     <div id="header">
         <div class="container clearfix">
             <div id="account" style="float: right;">
+				
 				{% if user.is_staff %}
 				<a href="/admin/" class="admin">Admin</a> &nbsp; &bullet; &nbsp; 
 				
@@ -42,8 +44,22 @@
 				{% else %}
 					<a href="{{ login_url }}?next={{request.path}}">{% trans "Log in" %}</a>
 				{% endif %}
+				<br/>
+				<br/>
+				<span id="colors">
+					<span id="color1">1</span>
+					<span id="color2">2</span>
+					<span id="color3">3</span>
+					<span id="color4">4</span>
+					<span id="color5">5</span>
+					<span id="color6">6</span>
+					<span id="color7">7</span>
+					<span id="color8">8</span>
+					<span id="color9">9</span>
+					<span id="color0">0</span>
+				</span>
             </div>
-            <h1 style="margin:0px; padding: 0px; margin-bottom: -10px;">{{shop_name}}</h1>
+            <h1 style="margin:0px; padding: 0px; margin-bottom: -10px;"><a href="/">{{shop_name}}</a></h1>
             <!--
             <div style="margin: 10px 0px -10px 0px; font-size: 0.9em; color: #444;">
                 పోన్: 08559 240222 | ఈ-మెయిలు: shop@kottapalli.in 
@@ -56,8 +72,8 @@
     <div id="nav" class="nav">
         <div class="container clearfix">
             <ul id="top-menu">
-                <li><a href="#">మొదటి పేజి</a></li>
-                <li><a href="#">కొత్తపల్లి పిల్లల మాస పత్రిక</a></li>
+                <li><a href="/">మొదటి పేజి</a></li>
+                <li><a href="http://kottapalli.in/">కొత్తపల్లి పిల్లల మాస పత్రిక</a></li>
             </ul>
 			<div id="cart-outer" class="button">
 	            <div id="cart">
@@ -87,6 +103,7 @@
             </div>
         </div>
     </div>
+	</div>
 	
     <div id="footer">
 		{% block footer %}
@@ -101,23 +118,6 @@
             
             <div class="onethird" id="k-patrika">
                 <h4>కొత్తపల్లి తెలుగు పిల్లల మాసపత్రిక</h4>
-                
-                <!--
-                <div style="float: left; padding: 5px; width: 100px;">
-                    <a href="#"><img src="http://placehold.it/100x150" /></a>
-                    <br/>
-                </div>
-                <div style="float: left;">
-                    ఈ సంచికలో:
-                    <ul style="text-align: left;">
-                        <li><a href="#">కంచె</li>
-                        <li><a href="#">వారసుడు</li>
-                        <li><a href="#">స్రీ శక్తి</li>
-                        <li><a href="#">పిల్ల మాట</li>
-                    </ul>
-                </div>
-                -->
-                
                 <div>
                     <a href="#"><img src="http://placehold.it/100x150" /></a>
                     <br/>
@@ -150,6 +150,7 @@
 	    {% endif %}
 	    {% endblock %}
 	{% endblock %}
+	
 </body>
 {% endblock %}
 </html>

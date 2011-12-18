@@ -34,7 +34,7 @@ ProductVariations or CustomProducts, look for product/detail_xxx.html
     <div class="cover" style="float: left;">
     {% if product.productimage_set.all %}
         {% for pic in product.productimage_set.all %}
-            {% thumbnail pic.picture 150x150 as image %}
+            {% thumbnail pic.picture 250x250 as image %}
             <img src="{{ image }}" width="{{ image.width }}" height="{{ image.height }}" />
         {% endfor %}
     {% else %}
@@ -46,8 +46,8 @@ ProductVariations or CustomProducts, look for product/detail_xxx.html
     {% endif %}
     </div>
     
-    <div class="bookinfo" style="padding-left: 160px">
-    <h4>{{ product.translated_name }}</h4>
+    <div class="bookinfo">
+    <h2>{{ product.translated_name }}</h2>
     <p>{{ product.translated_description }}</p>
     {% trans "Price" %} {% if default_view_tax %} {% trans '(incl. tax)' %}{% endif %}:
     <h3>
