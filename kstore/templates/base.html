@@ -75,11 +75,11 @@
                 <li><a href="/">మొదటి పేజి</a></li>
                 <li><a href="http://kottapalli.in/">కొత్తపల్లి పిల్లల మాస పత్రిక</a></li>
             </ul>
-			<div id="cart-outer" class="button">
+			<a href="/cart/" id="cart-outer" class="button">
 	            <div id="cart">
-					Cart (2)
+					Cart ({{ cart.numItems }})
 	            </div>
-			</div>
+			</a>
             <div id="search" style="padding: 10px 20px; float: right;">
                 <form action='/search/'>
                 <input type="text" name="keywords" value="{{search_string}}" style="width: 300px;"/>
