@@ -49,11 +49,23 @@ ProductVariations or CustomProducts, look for product/detail_xxx.html
     <div class="bookinfo">
     <h2>{{ product.translated_name }}</h2>
     <p>{{ product.translated_description }}</p>
+	
+	<!--
     {% trans "Price" %} {% if default_view_tax %} {% trans '(incl. tax)' %}{% endif %}:
     <h3>
     	{% if sale %}<strike id="fullprice" style="display: block;">{{ product|discount_price:""|currency }}</strike>{% endif %}
     	<span id="price">{{ product|discount_price:sale|currency }}</span>
     </h3>
+	-->
+	<div class="price">
+		<div class="price-value">{% trans "Price:" %} {{ product|discount_price:sale|currency}}</div>
+		<form action="{% url satchmo_smart_add %}" method="post">{% csrf_token %}
+			<input type="hidden" name="quantity" id="quantity" value="1" class="priced" />
+			<input type="hidden" name="productname" id="productname" value="{{product.slug}}" />
+			<button type="submit" name="addcart">{% trans "Buy Now" %}</button>
+		</form>
+	</div>
+	
 
 
 {% with product.translated_attributes as atts %}{% if atts %}
@@ -64,6 +76,7 @@ ProductVariations or CustomProducts, look for product/detail_xxx.html
 </p>
 {% endif %}{% endwith %}
 
+<!--
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 <form id="options" action="{% url satchmo_smart_add %}" method="post">{% csrf_token %}
 {% trans "Quantity" %} <input type="text" size="5" name="quantity" id="quantity" value="1" class="priced" />
@@ -72,6 +85,8 @@ ProductVariations or CustomProducts, look for product/detail_xxx.html
 {% plugin_point "product_add_buttons" %}
 {% plugin_point "product_form" %}
 </form>
+-->
+
 </div>
 {% endblock %}
 
