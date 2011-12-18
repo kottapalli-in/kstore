@@ -85,6 +85,14 @@ L10N_SETTINGS = {
 # required to run Django app to run at /
 FORCE_SCRIPT_NAME = ""
 
+BANK_ACCOUNT_DETAILS = '''
+Account Name: Kottapalli,
+Account Number: 0123456789,
+Account Branch: SBI,
+Branch Address: Kottapalli,
+IFSC Code: 12345
+'''
+
 # Hook to get production settings
 try:
     from production_settings import *
