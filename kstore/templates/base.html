@@ -77,7 +77,7 @@
             </ul>
 			<a href="/cart/" id="cart-outer" class="button">
 	            <div id="cart">
-					Cart ({{ cart.numItems }})
+					Cart ({{ cart.numItems|normalize_decimal }})
 	            </div>
 			</a>
             <div id="search" style="padding: 10px 20px; float: right;">
