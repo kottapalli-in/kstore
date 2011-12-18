@@ -1,4 +1,4 @@
 
 
 def theme(request):
-    return {'theme': 'style2.less'}
+    return {'theme': 'style3.less'}

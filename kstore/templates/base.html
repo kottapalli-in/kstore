@@ -17,83 +17,136 @@
 </head>
 {% block body %}
 <body{% if bodyid %} id="{{ bodyid }}"{% endif %}{% if bodyclass %} class="{{ bodyclass }}"{% endif %}>
+
+	<!--
     {% plugin_point "page_top" %}
-    <div id="container">
-	    <div id="top">
-	        
+	-->
 
-	        <div class="search" style="float: right;">
-    	        <div style="text-align: right;">
-    	            <a href="#">Home</a> 
-                    | <a href="#">Kottapalli Patrika</a> 
-    	            | <a href="#">Blog</a> 
-    	            | <a href="#">Contact Us</a> 
-    	            | <a href="#">Login</a> 
-    	            | <a href="#">Signup</a>
-    	        </div>
-	            <form action="/search/" style="padding-top: 20px;">
-    	            <input type="text" name="keywords" style="width: 200px;"/>
-    	            <input type="submit" value="Search"/>
-    	            <span style="font-size: 1.3em;">| Cart (2)</span>
-	            </form>
-	        </div>
-
-
-	        <h1>{{ shop_name }}</h1>
-	    </div>
-	    
-	    <div id="searchbar" style="padding: 5px; margin: 0 auto; text-align: center; background: #ccc; display: none;">
-	        
-	        <div style="float: right;">
-	        <a href="#">Login</a> | <a href="#">Cart</a>
-	        </div>
-
-	        <div style="float: left;">
-	        <a href="#">Kottapalli Patrika</a> | <a href="#">Contact Us</a>
-	        </div>
-
-	        
-	        <div class="search" style="display: inline;">
-	            <form action="/search/">
-    	            <input type="text" name="keywords" style="width: 400px;"/>
-    	            <input type="submit" value="Search">
-	            </form>
-	        </div>
-	    </div>
-
-        <!--
-	    <div id="navbar">
-	    <ul>
-	    	{% block navbar %}Breadcrumbs here{% endblock %}
-	   	</ul>
+    <div id="header">
+        <div class="container clearfix">
+            <div id="account" style="float: right;">
+				{% if user.is_staff %}
+				<a href="/admin/" class="admin">Admin</a> &nbsp; &bullet; &nbsp; 
+				
+				{% endif %}
+				
+                <a href="/contact/">Contact Us</a> 
+				| <a href="#" class="fixthis">FAQ</a> &nbsp; &bullet; &nbsp; 
+				
+				
+				{% if user.is_authenticated %}
+					{% url satchmo_account_info as accounturl %}
+					Welcome {{ user.username }}! 
+					| <a href="{{ accounturl }}">Account</a>
+					| <a href="{{ logout_url }}?next={{request.path}}">{% trans "Log out" %}</a>
+				{% else %}
+					<a href="{{ login_url }}?next={{request.path}}">{% trans "Log in" %}</a>
+				{% endif %}
+            </div>
+            <h1 style="margin:0px; padding: 0px; margin-bottom: -10px;">{{shop_name}}</h1>
+            <!--
+            <div style="margin: 10px 0px -10px 0px; font-size: 0.9em; color: #444;">
+                పోన్: 08559 240222 | ఈ-మెయిలు: shop@kottapalli.in 
+            </div>
+            -->
         </div>
-        -->
+    </div>
+	
 
-    <div id="sidebar-secondary">
-        {% include "sidebar_left.html" %}
-	</div>
+    <div id="nav" class="nav">
+        <div class="container clearfix">
+            <ul id="top-menu">
+                <li><a href="#">మొదటి పేజి</a></li>
+                <li><a href="#">కొత్తపల్లి పిల్లల మాస పత్రిక</a></li>
+            </ul>
+            <div style="float: right;">
+                <img src="/static/images/cart.png" height="40">
+            </div>
+            <div id="search" style="padding: 10px 20px; float: right;">
+                <form action='/search/'>
+                <input type="text" name="keywords" style="width: 300px;"/>
+                <input type="submit" value="Go"/>
+                </form>
+            </div>
+        </div>
+    </div>
+	
 
-	<div id="sidebar-primary">
-        {% include "sidebar_right.html" %}
-	</div>
-
-	<div id="content">
-	    {% block content %}{% endblock %}
-	</div>
-
-	<div id="footer">
+    <div id="featured">
+        <div class="container">
+            <div id="content-border">
+                <div id="content">
+					<div id="sidebar-secondary">
+						{% include "sidebar_left.html" %}
+					</div>
+				
+				    {% block content %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+	
+    <div id="footer">
 		{% block footer %}
-		{% blocktrans %}Powered by <a href="http://www.satchmoproject.com">Satchmo</a>.{% endblocktrans %}
+        <div class="container clearfix">
+            <div class="onethird">
+                <h4>మా గురించి</h4>
+                <div>తెలుగు మాధ్యమంగా పిల్లలకు ఉపయోగకరమైన పుస్తకాలను, వివిధ విద్యా ఉపకరణాలను 
+                    పిల్లలందరికీ అందుబాటులోకి తేవటం కోసం కొత్తపల్లి ట్రస్టు కృషి చేస్తోంది.
+                    (<a href="#">ఇంకా...</a>)
+                </div>
+            </div>
+            
+            <div class="onethird" id="k-patrika">
+                <h4>కొత్తపల్లి తెలుగు పిల్లల మాసపత్రిక</h4>
+                
+                <!--
+                <div style="float: left; padding: 5px; width: 100px;">
+                    <a href="#"><img src="http://placehold.it/100x150" /></a>
+                    <br/>
+                </div>
+                <div style="float: left;">
+                    ఈ సంచికలో:
+                    <ul style="text-align: left;">
+                        <li><a href="#">కంచె</li>
+                        <li><a href="#">వారసుడు</li>
+                        <li><a href="#">స్రీ శక్తి</li>
+                        <li><a href="#">పిల్ల మాట</li>
+                    </ul>
+                </div>
+                -->
+                
+                <div>
+                    <a href="#"><img src="http://placehold.it/100x150" /></a>
+                    <br/>
+                </div>
+                
+                <br style="clear: both;"/>
+                <a href="#">కొత్తపల్లి 43వ పుస్తకం చదవండి</a>.
+            </div>
+            <div class="onethird" id="recent-posts">
+                <h4>ఇటీవలి టపాలు</h4>
+                <ul>
+                    <li><a href="#">కొత్తపల్లి పుస్తకాల అంగడి ప్రారంభం</a> - <span class="date">2 రోజుల క్రితం</a>
+                    <li><a href="#">విజయవాడ పుస్తక మహోత్సవంలో కొత్తపల్లి</a> - <span class="date">9 రోజుల క్రితం</a>
+                </ul>
+            </div>
+			
+        </div>
+	
+        <div class="container clearfix">
+            <div id="copyright">
+                <img src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png"> some rights reserved, <a href="#">Kotapalli Trust</a> | Powered by <a href="#">Satchmo</a>
+            </div>
+        </div>
 		{% endblock %}
-	</div>
-
     </div>
 	{% block page-close %}
-    {% block google-tracker %}
-    {% if shop.options.GOOGLE.ANALYTICS.value %}
-        {% show_tracker is_secure %}
-    {% endif %}
-    {% endblock %}
+	    {% block google-tracker %}
+	    {% if shop.options.GOOGLE.ANALYTICS.value %}
+	        {% show_tracker is_secure %}
+	    {% endif %}
+	    {% endblock %}
 	{% endblock %}
 </body>
 {% endblock %}
