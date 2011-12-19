@@ -5,7 +5,7 @@
 <div class="search-item">
 	<div class="thumbnail">
         {% thumbnail product.main_image.picture 75x100 as image %}
-        <a href="{{ product.get_absolute_url }}"><img src="{{ image }}" width="{{ image.width }}" height="{{ image.height }}" /></a>
+        <a href="{{ product.get_absolute_url }}"><img src="{{ image }}" width="{{ image.width }}" height="{{ image.height }}" alt="Cover of {{product.translated_name}}"/></a>
 	</div>
 	<div class="details">
 		<a href="{{ product.get_absolute_url }}">{{ product.translated_name }} </a> by <span class="fixthis">Author name</span>
@@ -13,8 +13,8 @@
 			<div class="price">
 				<div class="price-value">{% trans "Price:" %} {{ product|discount_price:sale|currency}}</div>
 				<form action="{% url satchmo_smart_add %}" method="post">{% csrf_token %}
-					<input type="hidden" name="quantity" id="quantity" value="1" class="priced" />
-					<input type="hidden" name="productname" id="productname" value="{{product.slug}}" />
+					<input type="hidden" name="quantity" value="1" class="priced" />
+					<input type="hidden" name="productname" value="{{product.slug}}" />
 					<button type="submit" name="addcart">{% trans "Buy Now" %}</button>
 				</form>
 			</div>
