@@ -8,7 +8,7 @@
         <a href="{{ product.get_absolute_url }}"><img src="{{ image }}" width="{{ image.width }}" height="{{ image.height }}" /></a>
 	</div>
 	<div class="details">
-		<a href="{{ product.get_absolute_url }}">{{ product.translated_name }} </a> by <span class="fixthis">Author name</a>
+		<a href="{{ product.get_absolute_url }}">{{ product.translated_name }} </a> by <span class="fixthis">Author name</span>
 		<div>
 			<div class="price">
 				<div class="price-value">{% trans "Price:" %} {{ product|discount_price:sale|currency}}</div>
