@@ -28,12 +28,12 @@
             <div id="account" style="float: right;">
 				
 				{% if user.is_staff %}
-				<a href="/admin/" class="admin">Admin</a> &nbsp; &bullet; &nbsp; 
+				<a href="/admin/" class="admin">Admin</a> &nbsp; &bull; &nbsp; 
 				
 				{% endif %}
 				
                 <a href="/contact/">Contact Us</a> 
-				| <a href="#" class="fixthis">FAQ</a> &nbsp; &bullet; &nbsp; 
+				| <a href="#" class="fixthis">FAQ</a> &nbsp; &bull; &nbsp; 
 				
 				
 				{% if user.is_authenticated %}
@@ -76,9 +76,9 @@
                 <li><a href="http://kottapalli.in/">కొత్తపల్లి పిల్లల మాస పత్రిక</a></li>
             </ul>
 			<a href="/cart/" id="cart-outer" class="button">
-	            <div id="cart">
+	            <span id="cart">
 					Cart ({{ cart.numItems|normalize_decimal }})
-	            </div>
+	            </span>
 			</a>
             <div id="search" style="padding: 10px 20px; float: right;">
                 <form action='/search/'>
