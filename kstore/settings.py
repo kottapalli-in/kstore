@@ -123,7 +123,7 @@ INSTALLED_APPS = (
     #'satchmo_ext.brand',
     'payment',
     #'payment.modules.dummy',
-    'payment.modules.purchaseorder',
+    'payment.modules.cod',
     #'payment.modules.giftcertificate',
     #'satchmo_ext.wishlist',
     #'satchmo_ext.upsell',
@@ -153,10 +153,47 @@ SATCHMO_SETTINGS = {
     'SHOP_BASE' : '',
     'MULTISHOP' : False,
     'PRODUCT_SLUG': 'books',
+    'CUSTOM_SHIPPING_MODULES': ['satchmo_indiapost']
     #'SHOP_URLS' : patterns('satchmo_store.shop.views',)
+}
+
+LIVESETTINGS_OPTIONS = {   
+    1: {   
+        'DB': False,
+       'SETTINGS': {   
+           'PAYMENT': {   
+               'ALLOW_URL_REBILL': u'True',
+               'LIVE': u'True',
+                'ORDER_EMAIL_OWNER': u'True',
+                'USE_DISCOUNTS': u'False'
+            },
+            'PAYMENT_PURCHASEORDER': {   
+                'EXTRA_LOGGING': u'True',
+                'LIVE': u'True'
+            },
+            'PAYMENT_COD': {   
+                u'EXTRA_LOGGING': u'True',
+                u'LABEL': u'Payment on Delivery',
+                u'LIVE': u'True'
+            },
+            'SHIPPING': {  
+                'MODULES': u'["satchmo_indiapost"]'
+            },
+            'SHOP': {   
+                'REQUIRED_BILLING_DATA': u'["email", "first_name", "last_name", "phone", "street1", "city", "postal_code", "country"]',
+                'REQUIRED_SHIPPING_DATA': u'["addressee", "street1", "city", "postal_code", "country"]'
+            },
+           'satchmo_indiapost': {   
+             #  'SHIPPING_CHOICES': u'["REG_PARCEL", "REG_PARCEL_VPP", "REG_BOOKPOST", "REG_BOOKPOST_VPP"]',
+               'SHIPPING_CHOICES': u'["REG_BOOKPOST", "REG_BOOKPOST_VPP"]',
+               'VERBOSE_LOG': u'True'
+            }
+        }
+    }
 }
 
 SKIP_SOUTH_TESTS=True
 
 # Load the local settings
 from local_settings import *
+
