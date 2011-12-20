@@ -282,12 +282,16 @@ ul#top-menu li {
 	
 	padding: 5px;
 	background: @bgcolor_cart;
-	color: @color_cart;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
+	color: white;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
 	border: 1px solid @c9;
 	cursor: pointer;
+}
+
+a.button {
+	color: black;
 }
 
 #main-content h2 {
@@ -372,4 +376,18 @@ ul#top-menu li {
 
 #shipping li, #payment li {
 	display: block;
+}
+
+table#form-checkout-step1 tr td:first-child {
+	width: 200px;
+}
+
+#content input[type=submit] {
+	background: @c5;
+	color: black;
+	padding: 10px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border: 1px solid @c9;
 }
