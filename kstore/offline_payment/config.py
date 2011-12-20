@@ -4,7 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 # this is so that the translation utility will pick up the string
 gettext = lambda s: s
 
-PAYMENT_GROUP = ConfigurationGroup('PAYMENT_PAYMENT_OFFLINE',
+PAYMENT_GROUP = ConfigurationGroup('PAYMENT_OFFLINE_PAYMENT',
     _('Offline Payment Module Settings'),
     ordering = 100)
 
@@ -20,13 +20,13 @@ config_register_list(
         'MODULE',
         description=_('Implementation module'),
         hidden=True,
-        default = 'kstore.payment_offline'),
+        default = 'kstore.offline_payment'),
 
     StringValue(PAYMENT_GROUP,
         'KEY',
         description=_("Module key"),
         hidden=True,
-        default = 'PAYMENT_OFFLINE'),
+        default = 'OFFLINE_PAYMENT'),
 
     StringValue(PAYMENT_GROUP,
         'LABEL',

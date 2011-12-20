@@ -4,10 +4,10 @@ from django.views.decorators.cache import never_cache
 from livesettings import config_get_group
 from payment.views import confirm, payship
     
-offline = config_get_group('PAYMENT_OFFLINE')
+offline = config_get_group('PAYMENT_OFFLINE_PAYMENT')
     
 def pay_ship_info(request):
-    return payship.simple_pay_ship_info(request, config_get_group('PAYMENT_OFFLINE'), 'shop/checkout/cod/pay_ship.html')
+    return payship.simple_pay_ship_info(request, config_get_group('PAYMENT_OFFLINE_PAYMENT'), 'shop/checkout/cod/pay_ship.html')
 pay_ship_info = never_cache(pay_ship_info)
     
 def confirm_info(request):
