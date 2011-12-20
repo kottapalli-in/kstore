@@ -124,6 +124,7 @@ INSTALLED_APPS = (
     'payment',
     #'payment.modules.dummy',
     'payment.modules.cod',
+    'kstore.payment_offline',
     #'payment.modules.giftcertificate',
     #'satchmo_ext.wishlist',
     #'satchmo_ext.upsell',
@@ -174,6 +175,11 @@ LIVESETTINGS_OPTIONS = {
             'PAYMENT_COD': {   
                 u'EXTRA_LOGGING': u'True',
                 u'LABEL': u'Payment on Delivery',
+                u'LIVE': u'True'
+            },
+            'PAYMENT_OFFLINE': {   
+                u'EXTRA_LOGGING': u'True',
+                u'LABEL': u'Offline Bank Transfer',
                 u'LIVE': u'True'
             },
             'SHIPPING': {  
