@@ -25,13 +25,15 @@
 </ul>
 {% endif %}
 
+<h2>Shopping Cart</h2>
+
 {% if not cart|length %}
-    <h4>{% trans "Your cart is empty." %}</h4>
+    {% trans "Your cart is empty." %}
 {% else %}
-    <h4>{% trans "Your Cart" %}</h4>
-    <table><tr><th></th>
-    <th align="left">{% trans "Quantity" %}</th>
+    <table class="bordered-table">
+		<tr><th></th>
     <th>{% trans "Item" %}</th>
+    <th align="left">{% trans "Quantity" %}</th>
     {% if sale %}
 		<th>{% trans "Regular Price" %}</th>
 		<th>{% trans "Sale Price" %}
@@ -42,7 +44,18 @@
     </tr>
 
     {% for cartitem in cart %}
-        <tr><td>
+        <tr>
+			<td>{{forloop.counter}}</td>
+            <td><a href="{{cartitem.product.get_absolute_url}}">{{ cartitem.description }}</a></td>
+            <td align="center">
+				<input type="text" class="quantity span2" name="quantity" id="id_quantity" value="{{ cartitem.quantity|normalize_decimal }}" />
+            </td>
+			{% if sale %}<td align="center">{{ cartitem.unit_price|currency }}</td>{% endif %}
+			<td align="center">{{ cartitem|discount_line_unit_price:sale|currency }}</td>
+            <td align="center">{{ cartitem|discount_line_total:sale|currency }}</td>
+			
+			<!--
+			<td>
             <form action="{% url satchmo_cart_remove %}" method="post">{% csrf_token %}
                 <input type="hidden" name="cartitem" value="{{ cartitem.id }}" />
                 <input type="submit" value="{% trans 'Remove' %}" />
@@ -55,10 +68,10 @@
                     <input type="submit" id="id_update_submit" value="{% trans 'update amount' %}" />
                 </form>
             </td>
-            <td><a href="{{cartitem.product.get_absolute_url}}">{{ cartitem.description }}</a></td>
 			{% if sale %}<td align="center">{{ cartitem.unit_price|currency }}</td>{% endif %}
 			<td align="center">{{ cartitem|discount_line_unit_price:sale|currency }}</td>
             <td align="center">{{ cartitem|discount_line_total:sale|currency }}</td>
+			-->
         </tr>
 		{% cartitem_custom_details cartitem %}
 		{% cartitem_subscription_details cartitem %}
@@ -70,6 +83,10 @@
 	{% include "product/some_discount_eligible.html" %}
 	{% endif %}
 
-    <a href="{% url satchmo_checkout-step1 %}">{% trans "Check out" %}</a>
+
+	<div id="checkout-links">
+		<a href="{% url satchmo_checkout-step1 %}" class="button" style="float: left">{% trans "&larr; Continue Shopping" %}</a>
+		<a href="{% url satchmo_checkout-step1 %}" class="button" style="float: right">{% trans "Check out &rarr;" %}</a>
+	</div>
 {% endif %}
 {% endblock %}

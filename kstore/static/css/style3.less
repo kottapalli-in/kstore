@@ -72,10 +72,6 @@ a, a:visited {
 	color: @c9;
 }
     
-#content-border {
-    border: 1px solid #E4E4E4;
-}
-        
 #header {
     background: @bgcolor_header;
     padding: 10px 0px;
@@ -91,28 +87,25 @@ a, a:visited {
 	border-radius: 10px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
-	padding: 5px;
-}
-        
-.nav {
     font-size: 1.2em;
-    padding: 5px 0px;
+    padding: 5px;
+	margin-top: 10px;
     background: @bgcolor_nav;
 	color: @color_nav;
 }
 
-.nav a, .nav a:visited {
+#nav a, #nav a:visited {
 	color: inherit;
 	color: @color_nav;
 	text-decoration: none;
 }
 
-.nav a:hover {
+#nav a:hover {
 	text-decoration: underline;
 }
 
         
-.nav li {
+#nav li {
     float: left;
     position: relative;
 }
@@ -120,7 +113,7 @@ a, a:visited {
 
         
 #featured {
-    padding: 10px 0px 20px 0px;
+    padding: 10px 0px;
 }
         
 #footer {
@@ -131,10 +124,12 @@ a, a:visited {
 	font-size: 0.9em;
 }
 
+/*
 #footer .container {
 	margin: 0 auto;
 	width: 960px;
 }
+*/
         
 #footer ul {
     list-style: none;
@@ -154,10 +149,12 @@ a, a:visited {
     text-align: left;
 }
 
+/*
 #wrapper {
     margin: 0 auto;
     width: 960px;
 }
+*/
         
 h1 {
     font-size: 2.4em;
@@ -176,15 +173,10 @@ h4 {
 }
         
 #content {
-    padding: 20px 0px 20px 20px;
+    padding: 20px 0px;
 	/*
     background: url("http://shop.kottapalli.in/static/tmp/content-bg.png") repeat scroll 0 0 transparent;
 	*/
-	min-height: 300px;
-}
-
-#main-content {
-	margin-right: 200px;
 }
         
 ul#top-menu {
@@ -219,11 +211,9 @@ ul#top-menu li {
     text-align: center;
 }
 
-#right-sidebar {
-    float: right;
-    width: 150px;
+#right-sidebar {	
 	background: @bgcolor_sidebar;
-	padding: 20px 20px 10px 20px;
+	padding: 10px 20px 10px 20px;
 	border-radius: 10px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;	
@@ -277,13 +267,26 @@ ul#top-menu li {
 
 #cart {
     background: url('/static/images/cart.png') no-repeat 0px -3px; 
-	padding: 5px 0px 5px 40px;
+	padding: 10px 0px 7px 40px;
 	display: block;
 }
 
 .button {
 	cursor: pointer;
 	text-decoration: none;
+	
+	padding: 5px;
+	background: @bgcolor_cart;
+	color: @color_cart;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid @c9;
+	cursor: pointer;
+}
+
+#main-content h2 {
+	padding-bottom: 20px;
 }
 
 
@@ -297,13 +300,16 @@ ul#top-menu li {
 }
 
 .search-results {
-	margin-top: 20px;
 }
 
 .search-item {
 	border-bottom: 1px solid @c4;
 	min-height: 100px;
 	padding: 10px 0px;
+}
+
+.search-results .search-item:last-child {
+	border-bottom: none;
 }
 
 .search-item .thumbnail {
