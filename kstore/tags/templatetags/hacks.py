@@ -4,4 +4,5 @@ register = template.Library()
 
 @register.filter
 def product_attrs(product):
-    return dict((a.name, a.value) for a in product.translated_attributes())
+    attrs = product.translated_attributes('te') + product.translated_attributes()
+    return dict((a.name, a.value) for a in attrs)
