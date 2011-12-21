@@ -137,6 +137,7 @@ INSTALLED_APPS = (
     #'debug_toolbar',
     'app_plugins',
     'kstore.dashboard',
+    'kstore.tags',
 )
 
 AUTHENTICATION_BACKENDS = (
@@ -181,6 +182,10 @@ LIVESETTINGS_OPTIONS = {
                 u'EXTRA_LOGGING': u'True',
                 u'LABEL': u'Offline Bank Transfer',
                 u'LIVE': u'True'
+            },
+            'PRODUCT': {   
+                'MEASUREMENT_SYSTEM': u'["metric"]',
+                'NO_STOCK_CHECKOUT': u'False'
             },
             'SHIPPING': {  
                 'MODULES': u'["satchmo_indiapost"]'

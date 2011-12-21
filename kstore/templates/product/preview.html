@@ -1,6 +1,7 @@
 {% load i18n %}
 {% load thumbnail %}
 {% load satchmo_currency satchmo_discounts %}
+{% load hacks %}
 
 <div class="search-item">
 	<div class="thumbnail">
@@ -8,7 +9,12 @@
         <a href="{{ product.get_absolute_url }}"><img src="{{ image }}" width="{{ image.width }}" height="{{ image.height }}" alt="Cover of {{product.translated_name}}"/></a>
 	</div>
 	<div class="details">
-		<a href="{{ product.get_absolute_url }}">{{ product.translated_name }} </a> by <span class="fixthis">Author name</span>
+		<a href="{{ product.get_absolute_url }}">{{ product.translated_name }} </a> 
+        {% with product|product_attrs as attrs %}
+            {% if attrs.author %}
+                <span class="author">by {{ attrs.author }}</span>
+            {% endif %}
+		{% endwith %}
 		<div>
 			<div class="price">
 				<div class="price-value">{% trans "Price:" %} {{ product|discount_price:sale|currency}}</div>
@@ -19,11 +25,20 @@
 				</form>
 			</div>
 			<div class="metadata">
-				Publisher: National Book Trust<br/>
-				Pages: 42<br/>
-				Released: 2010<br/>
-				<br/>
-				<div class="desc">Bulbuli had heard so much about the mysterious place in the jungle that everybody talked about but nobody had visited.</div>
+				{% with product|product_attrs as attrs %}
+		            {% if attrs.publisher %}
+		                <div class="publisher">Publisher: {{ attrs.publisher }}</div>
+		            {% endif %}
+		            {% if attrs.pages %}
+		                <div class="pages">Pages: {{ attrs.pages }}</div>
+		            {% endif %}
+		            {% if attrs.publish_date %}
+		                <div class="pages">Released: {{ attrs.publish_date }}</div>
+		            {% endif %}
+					
+					{% if attrs %}<br/>{% endif %}
+				{% endwith %}
+				<div class="desc">{{ product.translated_description }}</div>
 			</div>
 		</div>
 		<br style="clear: left;"/>

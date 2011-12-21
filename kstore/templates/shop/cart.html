@@ -14,6 +14,8 @@
 
 {% block content %}
 
+<h2>Shopping Cart</h2>
+
 {% if error_message %}
 <div class="error">{{ error_message }}</div>
 {% endif %}
@@ -24,8 +26,6 @@
     {% endfor %}
 </ul>
 {% endif %}
-
-<h2>Shopping Cart</h2>
 
 {% if not cart|length %}
     {% trans "Your cart is empty." %}
@@ -48,7 +48,11 @@
 			<td>{{forloop.counter}}</td>
             <td><a href="{{cartitem.product.get_absolute_url}}">{{ cartitem.description }}</a></td>
             <td align="center">
-				<input type="text" class="quantity span2" name="quantity" id="id_quantity" value="{{ cartitem.quantity|normalize_decimal }}" />
+                <form class="qtyform" id="form-{{ cartitem.id }}" action="{% url satchmo_cart_set_qty %}" method="post">{% csrf_token %}
+                    <input type="hidden" name="cartitem" value="{{ cartitem.id }}" />
+					<input type="text" name="quantity" class="span2" value="{{ cartitem.quantity|normalize_decimal }}" />
+                    <input type="submit" value="{% trans 'update' %}"/>
+                </form>
             </td>
 			{% if sale %}<td align="center">{{ cartitem.unit_price|currency }}</td>{% endif %}
 			<td align="center">{{ cartitem|discount_line_unit_price:sale|currency }}</td>

@@ -126,6 +126,7 @@ a, a:visited {
     background: @bgcolor_footer;
 	color: @color_footer;
 	border-top: 1px solid @border_footer;
+	border-bottom: 1px solid @border_footer;
 	font-size: 0.9em;
 }
 
@@ -276,6 +277,10 @@ ul#top-menu li {
 	display: block;
 }
 
+a#cart-outer, a#cart-outer:visited {
+	color: black;
+}
+
 .button {
 	cursor: pointer;
 	text-decoration: none;
@@ -382,7 +387,7 @@ table#form-checkout-step1 tr td:first-child {
 	width: 200px;
 }
 
-#content input[type=submit] {
+#content input.button[type=submit] {
 	background: @c5;
 	color: black;
 	padding: 10px;
@@ -390,4 +395,21 @@ table#form-checkout-step1 tr td:first-child {
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border: 1px solid @c9;
+}
+
+.bookinfo .attrs {
+	margin-top: -20px;
+	margin-bottom: 20px;
+}
+
+.bookinfo .price {
+	margin: 20px 0px;
+}
+
+div.error {
+	background: #FDDFDE;
+	border: 1px solid #FBC7C6;
+	color: black;
+	margin: 10px 0px;
+	padding: 10px;
 }

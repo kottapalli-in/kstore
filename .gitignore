@@ -3,3 +3,4 @@
 *.pyc
 *.egg-info
 env/
+kstore/production_config.py
