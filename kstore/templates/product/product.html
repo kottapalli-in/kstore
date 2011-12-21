@@ -13,6 +13,7 @@ ProductVariations or CustomProducts, look for product/detail_xxx.html
 {% load satchmo_util satchmo_discounts %}
 {% load app_plugins %}
 {% load hacks %}
+{% load normalize_decimal %}
 
 {% block extra-head %}
 {% if product.meta %}
@@ -77,7 +78,7 @@ ProductVariations or CustomProducts, look for product/detail_xxx.html
     	<div class="price">
     		<div class="price-value">{% trans "Price:" %} {{ product|discount_price:sale|currency}}</div>
             
-            <div>{{product.items_in_stock}} in stock</div>
+            <div>{{product.items_in_stock|normalize_decimal}} in stock</div>
             
     		<form action="{% url satchmo_smart_add %}" method="post">{% csrf_token %}
     			<input type="hidden" name="quantity" id="quantity" value="1" class="priced" />
