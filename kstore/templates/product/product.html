@@ -40,10 +40,16 @@ ProductVariations or CustomProducts, look for product/detail_xxx.html
             <img src="{{ image }}" width="{{ image.width }}" height="{{ image.height }}" />
         {% endfor %}
     {% else %}
-        <div class='nocover' style="background: #eee; padding: 5px; width: 100px; height: 150px; border: 1px solid #ddd; text-align: center;">
-            <div class="inner-cover" style="border: 1px solid white; height: 129px; padding: 10px;">
-                <span class="product-title">{{ product.translated_name }}</span>
-            </div>
+        <div class='nocover' style="background: url(/static/images/productimage-picture-default.jpg) no-repeat; height: 252px; width: 201px;">
+			<div style="padding: 40px 10px 20px 20px; color: #BBA381; text-align: center;">
+                <div class="product-title" style="padding: 10px 0px;">{{ product.translated_name }}</div>
+                <div style="padding: 10px 0px;">~</div>
+	            {% with product|product_attrs as attrs %}
+	                {% if attrs.author %}
+	                    <div class="author" style="padding: 10px 0px;">{{ attrs.author }}</div>
+					{% endif %}
+				{% endwith %}
+				</div>
         </div>
     {% endif %}
     </div>
