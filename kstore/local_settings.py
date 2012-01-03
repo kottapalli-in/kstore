@@ -20,7 +20,6 @@ gettext_noop = lambda s:s
 LANGUAGE_CODE = 'te'
 LANGUAGES = (
    ('te', gettext_noop('Telugu')),
-   ('en', gettext_noop('English')),
 )
 
 #These are used when loading the test data
