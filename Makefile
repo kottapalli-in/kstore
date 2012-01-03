@@ -21,3 +21,6 @@ setup:
 venv:
 	virtualenv --no-site-packages env
 	./env/bin/pip install -r requirements.txt
+
+i18n: 
+	cd kstore && ../env/bin/python manage.py compilemessages

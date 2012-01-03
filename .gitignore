@@ -4,3 +4,4 @@
 *.egg-info
 env/
 kstore/production_config.py
+kstore/static/images/productimage-*
