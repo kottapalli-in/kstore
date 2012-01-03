@@ -11,24 +11,28 @@
     <table class="addbooks">
         <tr>
             <th>Title</th>
+            <th>Slug</th>
             <th>Author</th>
+            <th>Translator</th>
             <th>Publisher</th>
-            <th>Published Date</th>
+            <th>Date</th>
             <th>ISBN</th>
-            <th>Price</th>
+            <th class="price">Price</th>
             <th>Category</th>
             <th>Cover Image</th>
         </tr>
         {% for form in formset.forms %}
             <tr>
                 <td>{{ form.title }}</td>
+                <td>{{ form.slug }}</td>
                 <td>{{ form.author }}</td>
+                <td>{{ form.translator }}</td>
                 <td>{{ form.publisher }}</td>
-                <td>{{ form.published_date }}</td>
-                <td>{{ form.isbn }}</td>
-                <td>{{ form.price }}</td>
+                <td class="small">{{ form.published_date }}</td>
+                <td class="small">{{ form.isbn }}</td>
+                <td class="price small">{{ form.price }}</td>
                 <td>{{ form.category }}</td>
-                <td>{{ form.cover_image }}</td>
+                <td class="small">{{ form.cover_image }}</td>
             </tr>
         {% endfor %}
     </table>

@@ -10,7 +10,9 @@ NOT_PRODUCT_ATTRS = ['title', 'price', 'category', 'cover_image']
 
 class ProductForm(forms.Form):
     title = forms.CharField()
+    slug = forms.CharField()
     author = forms.CharField(required=False)
+    translator = forms.CharField(required=False)
     publisher = forms.CharField(required=False)
     published_date = forms.CharField(required=False)
     isbn = forms.CharField(required=False)
@@ -23,7 +25,7 @@ class ProductForm(forms.Form):
         site = Site.objects.get_current()
 
         # create product
-        product = Product(name=data['title'], slug=slugify(data['title']), site=site, active=True)
+        product = Product(name=data['title'], slug=data['slug'], site=site, active=True)
         product.save()
 
         # create product price
