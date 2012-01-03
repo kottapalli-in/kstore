@@ -40,31 +40,20 @@
 				
 				{% endif %}
 				
-                <a href="/contact/">Contact Us</a> 
-				| <a href="#" class="fixthis">FAQ</a> &nbsp; &bull; &nbsp;
+                <a href="/contact/">{% trans "Contact Us" %}</a> 
+				<!--
+				| <a href="#" class="fixthis">{% trans "FAQ" %}</a> 
+				-->
+				&nbsp; &bull; &nbsp;
 				
 				{% if user.is_authenticated %}
 					{% url satchmo_account_info as accounturl %}
 					Welcome {{ user.username }}! 
-					| <a href="{{ accounturl }}">Account</a>
+					| <a href="{{ accounturl }}">{% trans Account %}</a>
 					| <a href="{{ logout_url }}?next={{request.path}}">{% trans "Log out" %}</a>
 				{% else %}
 					<a href="{{ login_url }}?next={{request.path}}">{% trans "Log in" %}</a>
 				{% endif %}
-				<br/>
-				<br/>
-				<span id="colors">
-					<span id="color1">1</span>
-					<span id="color2">2</span>
-					<span id="color3">3</span>
-					<span id="color4">4</span>
-					<span id="color5">5</span>
-					<span id="color6">6</span>
-					<span id="color7">7</span>
-					<span id="color8">8</span>
-					<span id="color9">9</span>
-					<span id="color0">0</span>
-				</span>
             </div>
 	        <h1 class="title"><a href="/">{{shop_name}}</a></h1>
 	    </div>

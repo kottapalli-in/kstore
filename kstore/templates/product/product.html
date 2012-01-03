@@ -36,7 +36,7 @@ ProductVariations or CustomProducts, look for product/detail_xxx.html
     <div class="cover" style="float: left;">
     {% if product.productimage_set.all %}
         {% for pic in product.productimage_set.all %}
-            {% thumbnail pic.picture 250x250 as image %}
+            {% thumbnail pic.picture 200x250 as image %}
             <img src="{{ image }}" width="{{ image.width }}" height="{{ image.height }}" />
         {% endfor %}
     {% else %}
@@ -62,10 +62,10 @@ ProductVariations or CustomProducts, look for product/detail_xxx.html
                     <div class="author">by {{ attrs.author }}</div>
                 {% endif %}
                 {% if attrs.translator %}
-                    <div class="translator">Translator: {{ attrs.translator }}</div>
+                    <div class="translator">{% trans "Translator:" %} {{ attrs.translator }}</div>
                 {% endif %}
                 {% if attrs.publisher %}
-                    <div class="publisher">Publisher: {{ attrs.publisher }}</div>
+                    <div class="publisher">{% trans "Publisher:" %} {{ attrs.publisher }}</div>
                 {% endif %}
             {% endwith %}
         </div>
