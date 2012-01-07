@@ -6,7 +6,7 @@
 <div class="search-item">
 	<div class="thumbnail">
         {% thumbnail product.main_image.picture 75x100 as image %}
-        <a href="{{ product.get_absolute_url }}"><img src="{{ image }}" width="{{ image.width }}" height="{{ image.height }}" alt="Cover of {{product.translated_name}}"/></a>
+        <a href="{{ product.get_absolute_url }}" class="img"><img src="{{ image }}" width="{{ image.width }}" height="{{ image.height }}" alt="Cover of {{product.translated_name}}"/></a>
 	</div>
 	<div class="details">
 		<a href="{{ product.get_absolute_url }}">{{ product.translated_name }} </a> 

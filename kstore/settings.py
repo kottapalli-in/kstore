@@ -75,6 +75,7 @@ TEMPLATE_CONTEXT_PROCESSORS = ('satchmo_store.shop.context_processors.settings',
                                'kstore.context_processors.theme',
                                'kstore.context_processors.bank_account_details',
                                'kstore.context_processors.search_query',
+                               'kstore.context_processors.kfeeds',
                                #'satchmo_ext.recentlist.context_processors.recent_products',
                                )
 

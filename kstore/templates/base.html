@@ -1,4 +1,5 @@
 {% load i18n satchmo_category satchmo_google satchmo_util satchmo_currency satchmo_discounts app_plugins normalize_decimal %}
+{% load hacks %}
 <!DOCTYPE html>
 <html lang="te">
   <head>
@@ -137,18 +138,20 @@
 	            <div class="span6" id="k-patrika">
 	                <h4>కొత్తపల్లి తెలుగు పిల్లల మాసపత్రిక</h4>
 	                <div>
-	                    <a href="#"><img src="http://placehold.it/100x150" alt="Kottapalli cover image"/></a>
+	                    <a href="http://kottapalli.in/latest_issue" class="img"><img src="http://kottapalli.in/latest_issue/cover.jpg" alt="Kottapalli cover image"/></a>
 	                    <br/>
 	                </div>
                 
 	                <br style="clear: both;"/>
-	                <a href="#">కొత్తపల్లి 43వ పుస్తకం చదవండి</a>.
+	                <a href="#">కొత్తపల్లి కథల పుస్తకం చదవండి</a>.
 	            </div>
 	            <div class="span5" id="recent-posts">
+					
 	                <h4>ఇటీవలి టపాలు</h4>
 	                <ul>
-	                    <li><a href="#">కొత్తపల్లి పుస్తకాల అంగడి ప్రారంభం</a> - <span class="date">2 రోజుల క్రితం</span>
-	                    <li><a href="#">విజయవాడ పుస్తక మహోత్సవంలో కొత్తపల్లి</a> - <span class="date">9 రోజుల క్రితం</span>
+						{% for post in kottapalli_blog_posts %}
+							<li><a href="{{ post.url }}">{{ post.title }}</a> <!-- - <span class="date">2 రోజుల క్రితం</span> -->
+						{% endfor %}
 	                </ul>
 	            </div>
 			</div>
@@ -168,7 +171,7 @@
 	    {% endif %}
 	    {% endblock %}
 	{% endblock %}
-	
+    	
 </body>
 {% endblock %}
 </html>

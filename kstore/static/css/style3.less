@@ -73,8 +73,11 @@ h2 {
 	color: @c9;
 }
 
-a, a:visited {
+a, a:visited, a:hover {
 	color: @c9;
+}
+
+a:hover {
 }
     
 #header {
@@ -445,4 +448,18 @@ text-decoration: none;
 #pagination li.currentpage {
 font-weight: bold;
 padding: 0 5px;
+}
+
+a.img, a.img:visited {
+	text-decoration: none;
+	border: none;
+}
+
+a.img img {
+	padding: 2px;
+}
+
+a.img:hover img{
+	padding: 0px;
+	border: 2px solid @c9;
 }
