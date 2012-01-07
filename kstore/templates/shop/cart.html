@@ -87,10 +87,21 @@
 	{% include "product/some_discount_eligible.html" %}
 	{% endif %}
 
-
 	<div id="checkout-links">
-		<a href="{% url satchmo_checkout-step1 %}" class="button" style="float: left">{% trans "&larr; Continue Shopping" %}</a>
+		<a href="javascript:;" id="continue-shopping" class="button" style="float: left">{% trans "&larr; Continue Shopping" %}</a>
 		<a href="{% url satchmo_checkout-step1 %}" class="button" style="float: right">{% trans "Check out &rarr;" %}</a>
 	</div>
+	<script type="text/javascript">
+		$(function(){
+			$("#continue-shopping").click(function() {
+				if (document.referrer.match('/\/cart\/$')) {
+					document.location = "/";
+				} 
+				else {
+					window.history.back();
+				}
+			});
+		});
+	</script>
 {% endif %}
 {% endblock %}
