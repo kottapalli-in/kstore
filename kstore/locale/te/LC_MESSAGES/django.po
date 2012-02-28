@@ -20,7 +20,7 @@ msgstr ""
 
 #: local_settings.py:22
 msgid "Telugu"
-msgstr ""
+msgstr "తెలుగు"
 
 #: offline_payment/config.py:8
 msgid "Offline Payment Module Settings"
@@ -28,11 +28,11 @@ msgstr ""
 
 #: offline_payment/config.py:14
 msgid "Accept real payments"
-msgstr ""
+msgstr "నిజం చెల్లింపులను స్వీకరించు"
 
 #: offline_payment/config.py:15
 msgid "False if you want to be in test mode"
-msgstr ""
+msgstr "మీరు టెస్టు మోడ్‌లో ఉండాలనుకుంటే దీని విలువను ఫాల్స్ గా ఉండనివ్వండి"
 
 #: offline_payment/config.py:21
 msgid "Implementation module"
@@ -48,11 +48,11 @@ msgstr ""
 
 #: offline_payment/config.py:35
 msgid "Bank Transfer"
-msgstr ""
+msgstr "బ్యాంకు ట్రాన్సుఫర్"
 
 #: offline_payment/config.py:36
 msgid "This will be passed to the translation utility"
-msgstr ""
+msgstr "ఈ  అంశం అనువాద సౌలభ్యానికి పంపబడుతున్నది"
 
 #: offline_payment/config.py:40
 msgid ""
@@ -61,11 +61,11 @@ msgstr ""
 
 #: offline_payment/config.py:45
 msgid "Verbose logs"
-msgstr ""
+msgstr "వాడుక వివరాలు విస్తృతరూపంలో"
 
 #: offline_payment/config.py:46
 msgid "Add extensive logs during post."
-msgstr ""
+msgstr "టపా ప్రక్రియ జరిగే సమయంలో వాడుక వివరాలను విస్తృతంగా నమోదు చేయి"
 
 #: offline_payment/processor.py:26
 msgid "Success"
@@ -85,7 +85,7 @@ msgstr "వర్గాలు"
 
 #: templates/sidebar_right.html:17
 msgid "Quick Links"
-msgstr ""
+msgstr "త్వరిత లంకెలు"
 
 #: templates/sidebar_right.html:19
 msgid "Recently Added"
@@ -121,7 +121,7 @@ msgstr "కొనాలనుకుంటున్న పుస్తకాల �
 
 #: templates/sidebar_right.html:46
 msgid "Check out"
-msgstr ""
+msgstr "దీన్ని చూస్తాను"
 
 #: templates/sidebar_right.html:52
 msgid "Contact Us"
@@ -219,18 +219,18 @@ msgstr "పన్ను"
 #: templates/shop/email/_order_detail_table.html:8
 #, fuzzy
 msgid "Contact Information"
-msgstr "ఖాతా సమాచారం"
+msgstr "ఖాతాదారు సమాచారం"
 
 #: templates/shop/_order_details.html:61
 #: templates/shop/email/_order_detail_table.html:23
 #, fuzzy
 msgid "Billing Information"
-msgstr "ఖాతా సమాచారం"
+msgstr "బిల్లింగు  సమాచారం"
 
 #: templates/shop/_order_details.html:70
 #: templates/shop/email/_order_detail_table.html:24
 msgid "Shipping Address"
-msgstr "పుస్తకాలు పంపవలసిన చిరునామా"
+msgstr "పుస్తకాలను పంపవలసిన చిరునామా"
 
 #: templates/shop/cart.html:31
 msgid "Your cart is empty."
@@ -238,11 +238,11 @@ msgstr "మీరు ఏ పుస్తకాన్నీ ఎంపిక చ�
 
 #: templates/shop/cart.html:35
 msgid "Item"
-msgstr ""
+msgstr "పుస్తకం"
 
 #: templates/shop/cart.html:38
 msgid "Regular Price"
-msgstr ""
+msgstr "సాధారణ వెల"
 
 #: templates/shop/cart.html:39
 #, fuzzy
@@ -333,15 +333,15 @@ msgstr "దయచేసి ఈ క్రింది తప్పును త�
 msgid ""
 "If you already have an account, you can login now to fill in most of the "
 "information below."
-msgstr ""
+msgstr "ఒకవేళ మీకు ఇప్పటికే ఖాతా ఉండి ఉంటే లాగిన్ అవ్వండి- క్రింది సమాచారాన్ని తిరిగి నింపవలసిన అవసరం ఉండదు"
 
 #: templates/shop/form.html:34 templates/shop/checkout/form.html:34
 msgid "This is just a convenience, no account is required!"
-msgstr ""
+msgstr "ఇది కేవలం సౌలభ్యం కోసం‌ మాత్రమే- ఎలాంటి ఖాతానూ తెరువనవసరం లేదు!"
 
 #: templates/shop/form.html:37 templates/shop/checkout/form.html:37
 msgid "Username or email"
-msgstr ""
+msgstr "వినియోగదారుని గుర్తింపు లేదా ఇ-మెయిలు"
 
 #: templates/shop/form.html:38 templates/shop/checkout/form.html:38
 msgid "Password"
@@ -353,15 +353,15 @@ msgstr "లాగిన్"
 
 #: templates/shop/form.html:46 templates/shop/checkout/form.html:46
 msgid "You'll need to fill out at least the fields with a *"
-msgstr ""
+msgstr "* గుర్తు ఉన్న అంశాలను తప్పక నింపాలి"
 
 #: templates/shop/form.html:51 templates/shop/checkout/form.html:51
 msgid "How do you want to pay?"
-msgstr ""
+msgstr "మీరు డబ్బును ఏ విధంగా చెల్లించనున్నారు?"
 
 #: templates/shop/form.html:52 templates/shop/checkout/form.html:52
 msgid "Payment method"
-msgstr ""
+msgstr "డబ్బు చెల్లించే విధానం"
 
 #: templates/shop/form.html:56 templates/shop/checkout/form.html:56
 #, fuzzy
@@ -386,11 +386,11 @@ msgstr "ఫోన్ నంబరు"
 
 #: templates/shop/form.html:78 templates/shop/checkout/form.html:78
 msgid "Discounts"
-msgstr ""
+msgstr "తగ్గింపులు"
 
 #: templates/shop/form.html:79 templates/shop/checkout/form.html:79
 msgid "Discount code"
-msgstr ""
+msgstr "తగ్గింపు సంకేతం"
 
 #: templates/shop/form.html:84
 msgid "Continue Checkout"
@@ -402,15 +402,15 @@ msgstr "ఎంపిక చేసిన పుస్తకాలు"
 
 #: templates/shop/index.html:26 templates/shop/index.html.py:28
 msgid "Previous"
-msgstr ""
+msgstr "ఇంతకు ముందువి"
 
 #: templates/shop/index.html:38 templates/shop/index.html.py:40
 msgid "Next"
-msgstr ""
+msgstr "తరువాతవి"
 
 #: templates/shop/search.html:13 templates/shop/search.html.py:40
 msgid "Nothing found"
-msgstr "ఏమీ కనిపించలేదు"
+msgstr "దొరకలేదు"
 
 #: templates/shop/search.html:16
 #, python-format
