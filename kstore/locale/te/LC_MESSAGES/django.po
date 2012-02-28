@@ -32,11 +32,11 @@ msgstr "నిజం చెల్లింపులను స్వీకరి�
 
 #: offline_payment/config.py:15
 msgid "False if you want to be in test mode"
-msgstr "మీరు టెస్టు మోడ్‌లో ఉండాలనుకుంటే దీని విలువను ఫాల్స్ గా ఉండనివ్వండి"
+msgstr "మీరు టెస్టు మోడ్‌లో ఉండాలనుకుంటే దీని విలువను అసత్యం గా ఉండనివ్వండి"
 
 #: offline_payment/config.py:21
 msgid "Implementation module"
-msgstr ""
+msgstr "కార్య నిర్వాహక విభాగం"
 
 #: offline_payment/config.py:27
 msgid "Module key"
@@ -57,7 +57,7 @@ msgstr "ఈ  అంశం అనువాద సౌలభ్యానికి �
 #: offline_payment/config.py:40
 msgid ""
 "The url base used for constructing urlpatterns which will use this module"
-msgstr ""
+msgstr "ఈ విభాగాన్ని ఉపయోగించుకొనే యూఆర్‌ఎల్ క్రమరూపాలను నిర్మించేందుకు ఉపయోగించే యూఆర్‌ఎల్ ఆధారం"
 
 #: offline_payment/config.py:45
 msgid "Verbose logs"
@@ -97,7 +97,7 @@ msgstr "సంచలనం సృష్టిస్తున్న పుస్�
 
 #: templates/sidebar_right.html:23
 msgid "Category Index"
-msgstr ""
+msgstr "విభాగ సూచిక"
 
 #: templates/sidebar_right.html:25
 msgid "Quick Order"
@@ -193,23 +193,23 @@ msgstr "తగ్గింపు"
 
 #: templates/shop/_order_details.html:40
 msgid "Base Shipping"
-msgstr ""
+msgstr "కనీస రవాణా ఛార్జీలు"
 
 #: templates/shop/_order_details.html:41
 msgid "Shipping Discount"
-msgstr ""
+msgstr "రవాణా ఛార్జీలలో తగ్గింపు"
 
 #: templates/shop/_order_details.html:42
 msgid "Shipping (incl. Tax)"
-msgstr ""
+msgstr "రవాణా ఛార్జీలు(పన్నులు కలుపుకొని)"
 
 #: templates/shop/_order_details.html:44
 msgid "Shipping"
-msgstr ""
+msgstr "రవాణా"
 
 #: templates/shop/_order_details.html:48
 msgid "Tax included"
-msgstr ""
+msgstr "పన్నులు కలుపబడ్డాయి"
 
 #: templates/shop/_order_details.html:50
 msgid "Tax"
@@ -299,14 +299,14 @@ msgstr "బిల్లుచేసి పంపండి"
 #: templates/shop/checkout/form.html:18
 #: templates/shop/checkout/purchaseorder/confirm.html:12
 msgid "Payment"
-msgstr ""
+msgstr "చెల్లింపు"
 
 #: templates/shop/form.html:19 templates/shop/checkout/base_confirm.html:17
 #: templates/shop/checkout/base_pay_ship.html:15
 #: templates/shop/checkout/form.html:19
 #, fuzzy
 msgid "Confirmation"
-msgstr "ఇచ్చి సమాచారం అంతా సరైనదే"
+msgstr "ఇచ్చిన  సమాచారం అంతా సరైనదే"
 
 #: templates/shop/form.html:22 templates/shop/checkout/base_pay_ship.html:19
 #: templates/shop/checkout/form.html:22
@@ -366,7 +366,7 @@ msgstr "డబ్బు చెల్లించే విధానం"
 #: templates/shop/form.html:56 templates/shop/checkout/form.html:56
 #, fuzzy
 msgid "Basic Information"
-msgstr "ఖాతా సమాచారం"
+msgstr "మౌలిక సమాచారం"
 
 #: templates/shop/form.html:57 templates/shop/checkout/form.html:57
 msgid "Email address"
@@ -374,11 +374,11 @@ msgstr "ఈ-మెయిలు"
 
 #: templates/shop/form.html:60 templates/shop/checkout/form.html:60
 msgid "First name"
-msgstr ""
+msgstr "మీ పేరు"
 
 #: templates/shop/form.html:63 templates/shop/checkout/form.html:63
 msgid "Last name"
-msgstr ""
+msgstr "మీ ఇంటి పేరు"
 
 #: templates/shop/form.html:66 templates/shop/checkout/form.html:66
 msgid "Phone number"
@@ -394,7 +394,7 @@ msgstr "తగ్గింపు సంకేతం"
 
 #: templates/shop/form.html:84
 msgid "Continue Checkout"
-msgstr ""
+msgstr "ఇంకా కొన్ని పుస్తకాలు చూస్తాను"
 
 #: templates/shop/index.html:13
 msgid "Featured Books"
@@ -415,66 +415,69 @@ msgstr "దొరకలేదు"
 #: templates/shop/search.html:16
 #, python-format
 msgid "Search results for %(category_name)s products"
-msgstr ""
+msgstr "%(category_name) అన్వేషణ ఫలితాలు"
 
 #: templates/shop/search.html:30
 msgid "Search Results"
-msgstr ""
+msgstr "అన్వేషణ ఫలితాలు"
 
 #: templates/shop/checkout/base_confirm.html:22
 msgid ""
 "The following error was returned while trying to process your payment. "
 "Please correct and resubmit."
-msgstr ""
+msgstr "మీ చెల్లింపును అమలు చేస్తుండగా క్రింది పొరపాటు కానవచ్చింది. "
+"దయచేసి పొరపాటును సరిదిద్ది మళ్ళీ సబ్మిట్ చేయండి"
 
 #: templates/shop/checkout/base_confirm.html:25
 msgid "Please validate the following information, then submit your order."
-msgstr ""
+msgstr "దయచేసి క్రింది సమాచారాన్ని సరిచూసుకోండి, అటుపైన మీ ఆర్డరును ప్లేస్ చేయండి."
 
 #: templates/shop/checkout/base_confirm.html:41
 msgid "Purchase Items"
-msgstr ""
+msgstr "కొన్న పుస్తకాలు"
 
 #: templates/shop/checkout/base_pay_ship.html:41
 #, fuzzy
 msgid "Shipping Information"
-msgstr "ఖాతా సమాచారం"
+msgstr "చేరవేతకు కావలసిన సమాచారం"
 
 #: templates/shop/checkout/base_pay_ship.html:46
 msgid "The following shipping method will be used"
-msgstr ""
+msgstr "పుస్తకాలను మీకు చేరవేసేందుకు క్రింది విధానాన్ని వాడుకుంటాము"
 
 #: templates/shop/checkout/base_pay_ship.html:48
 msgid "Please choose your preferred shipping method"
-msgstr ""
+msgstr "దయచేసి పుస్తకాలను మీకు సులభంగా చేర్చే పద్ధతిని ఎంపిక చేసుకోండి"
 
 #: templates/shop/checkout/base_pay_ship.html:59
 msgid "There are no items in this order to ship."
-msgstr ""
+msgstr "ఈ ఆర్డరులో మీకు చేరవేసేందుకు ఏ పుస్తకాలూ లేవు."
 
 #: templates/shop/checkout/base_pay_ship.html:66
 msgid ""
 "No valid shipping method is available. Please verify that your address is "
 "correct."
-msgstr ""
+msgstr "చేరవేసేందుకు తగిన పద్ధతి ఏదీ అందుబాటులో లేదు.  దయచేసి మీ చిరునామాను మరొకసారి"
+"సరిచూసుకోండి."
 
 #: templates/shop/checkout/base_pay_ship.html:68
 msgid "Confirm"
-msgstr "నిర్ధారించు"
+msgstr "అన్నీ సరిగా ఉన్నాయి"
 
 #: templates/shop/checkout/form.html:84
 msgid "Continue Checkout &rarr;"
-msgstr ""
+msgstr "మరిన్ని పుస్తకాలను చూస్తాను &rarr;"
 
 #: templates/shop/checkout/success.html:14
 msgid "Thank you for your order!"
-msgstr ""
+msgstr "పుస్తకాలు కొన్నందుకు ధన్యవాదాలు!"
 
 #: templates/shop/checkout/success.html:15
 msgid ""
 "Please print out this page as a receipt.  You will also receive an email "
 "with this information."
-msgstr ""
+msgstr "దయచేసి ఈ పేజీని ప్రింటు చేసి పెట్టుకోండి. ఈ సమాచారంతో మీకు ఒక ఇ-మెయిలు కూడా"
+"పంపబడుతున్నది"
 
 #: templates/shop/checkout/purchaseorder/confirm.html:15
 #, python-format
@@ -486,37 +489,46 @@ msgid ""
 "Deposit the order amount of %(order_total)s, in the above mentioned bank "
 "account.\n"
 msgstr ""
+"\n"
+"<b>Bank Account Details</b><br/>\n"
+"<pre>%(bank_account_details)s</pre>\n"
+"\n"
+"దయచేసి మీ ఆర్డరు మొత్తం రూ. %(order_total)s ను పై బ్యాంకు అకౌంటులో" 
+"జమ చేయండి.\n"
+
+
 
 #: templates/shop/email/_order_detail_table.html:65
 msgid "Discount:"
-msgstr ""
+msgstr "తగ్గింపు"
 
 #: templates/shop/email/_order_detail_table.html:74
 msgid "Shipping:"
-msgstr ""
+msgstr "చేరవేత"
 
 #: templates/shop/email/_order_detail_table.html:83
 msgid "Tax:"
-msgstr ""
+msgstr "పన్ను"
 
 #: templates/shop/email/_order_detail_table.html:91
 msgid "Total:"
-msgstr ""
+msgstr "మొత్తం:"
 
 #: templates/shop/email/_order_detail_table.html:104
 msgid "Payment: "
-msgstr ""
+msgstr "చెల్లింపు: "
 
 #: templates/shop/email/_order_detail_table.html:108
 #, python-format
 msgid ""
 "%(credit_card_type)s card ending in %(credit_card_number)s will be charged "
 "%(order_total)s."
-msgstr ""
+msgstr "%(credit_card_type)s లలో %(credit_card_number)s లతో అంతమయే కార్డులనుండి  ఈ మొత్తం   %(order_total)s.
+"తీసుకొనబడుతుంది."
 
 #: templates/shop/email/_order_detail_table.html:120
 msgid "This is a downloadable product"
-msgstr ""
+msgstr "ఈ పుస్తకాన్ని మీరు డౌన్లోడు చేసుకోవచ్చు"
 
 #, fuzzy
 #~ msgid "Payment Information"
@@ -528,11 +540,11 @@ msgstr ""
 
 #, fuzzy
 #~ msgid "Best Selling Products"
-#~ msgstr "ఉత్తమ అమ్మకందారులు"
+#~ msgstr "సంచలనం సృష్టిస్తున్న పుస్తకాలు"
 
 #, fuzzy
 #~ msgid "Contact"
-#~ msgstr "సంప్రదించండి"
+#~ msgstr "సంప్రతించండి"
 
 #, fuzzy
 #~ msgid "Details"
@@ -540,11 +552,11 @@ msgstr ""
 
 #, fuzzy
 #~ msgid "Account Verification"
-#~ msgstr "ఖాతా సమాచారం"
+#~ msgstr "ఖాతా సమాచారాన్ని సరిచూడండి"
 
 #, fuzzy
 #~ msgid "Contacts"
-#~ msgstr "సంప్రదించండి"
+#~ msgstr "సంప్రతించండి"
 
 #, fuzzy
 #~ msgid "Supplier Order"
@@ -564,35 +576,35 @@ msgstr ""
 
 #, fuzzy
 #~ msgid "Address Information"
-#~ msgstr "ఖాతా సమాచారం"
+#~ msgstr "చిరునామా"
 
 #, fuzzy
 #~ msgid "Your Account info"
-#~ msgstr "ఖాతా సమాచారం"
+#~ msgstr "మీ ఖాతా సమాచారం"
 
 #, fuzzy
 #~ msgid "Account options"
-#~ msgstr "ఖాతా సమాచారం"
+#~ msgstr "ఖాతా రకాలు"
 
 #, fuzzy
 #~ msgid "Set up contact information"
-#~ msgstr "ఖాతా సమాచారం"
+#~ msgstr "ఖాతా సమాచారాన్ని అందించండి:"
 
 #, fuzzy
 #~ msgid "Account Activation"
-#~ msgstr "ఖాతా సమాచారం"
+#~ msgstr "ఖాతాను మళ్ళీ శక్తివంతం చెయ్యి"
 
 #, fuzzy
 #~ msgid "Account Creation"
-#~ msgstr "ఖాతా సమాచారం"
+#~ msgstr "ఖాతా తెరు"
 
 #, fuzzy
 #~ msgid "Please Enter Your Account Information"
-#~ msgstr "ఖాతా సమాచారం"
+#~ msgstr "దయచేసి మీ ఖాతా సమాచారాన్ని అందించండి"
 
 #, fuzzy
 #~ msgid "Store Contact"
-#~ msgstr "సంప్రదించండి"
+#~ msgstr "సంప్రతించండి"
 
 #, fuzzy
 #~ msgid "Product Order"
@@ -604,26 +616,26 @@ msgstr ""
 
 #, fuzzy
 #~ msgid "Admin Tools"
-#~ msgstr "అడ్మిన్"
+#~ msgstr "అడ్మిన్ ఉపకరణాలు"
 
 #~ msgid "Welcome to the shop."
-#~ msgstr "షాప్ కు స్వాగతం."
+#~ msgstr "అంగడికి స్వాగతం."
 
 #, fuzzy
 #~ msgid "Quick Order Form"
-#~ msgstr "త్వరిత ఆర్డర్"
+#~ msgstr "త్వరిత ఆర్డర్ దరఖాస్తు"
 
 #, fuzzy
 #~ msgid "Product Details"
-#~ msgstr "ఖాతా వివరాలు"
+#~ msgstr "పుస్తకాల వివరాలు"
 
 #, fuzzy
 #~ msgid "Bad quantity."
-#~ msgstr "పరిమాణం"
+#~ msgstr "పరిమాణం సరిగా లేదు"
 
 #, fuzzy
 #~ msgid "Contents"
-#~ msgstr "సంప్రదించండి"
+#~ msgstr "అంశాలు"
 
 #, fuzzy
 #~ msgid "Min Price"
